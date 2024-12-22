@@ -1,0 +1,9 @@
+modules = ["web"]
+run = "index.html"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "index.html"]
+
