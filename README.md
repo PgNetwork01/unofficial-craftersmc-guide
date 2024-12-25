@@ -24,11 +24,12 @@ Join an active and diverse community of players as you explore everything **Craf
 
 The **CraftersMC Guides** almost covers every aspect of progression in SkyBlock, including:  
 
-1. **Beginner Guide**
-2. **Mid Game Guide (2 Parts)**
-3. **Bazaar Guide**
-4. **Accessories Guide**
-5. **Queries related to Guides**
+1. **Starter**
+2. **Intermediate (2 Parts)**
+3. **Advanced**
+4. **Bazaar Guide**
+5. **Accessories Guide**
+6. **Queries related to Guides**
 
 ---
 
@@ -43,7 +44,7 @@ This static web package is powered by:
 
 ## **Preview**
 
-[CraftersMC Guides Output](https://tgjassiyt.github.io/CraftersMC-Guides-Output/)
+[CraftersMC Guides](https://craftersmc-guides-project.github.io/)
 
 ---
 
@@ -52,14 +53,20 @@ This static web package is powered by:
 This project is brought to you by:  
 - **Coder:** TGJASSIYT (Discord: jassi_xc)
 - **Coder:** TechonTheDev (Discord: techonthedev)
-- **Writer:** ieduoo (Discord: ieduoo)  
+- **Writer:** ieduoo (Discord: ieduoo)
+- **Advisor:** Aakash Gupta (Discord: aakashgupta12)
 
 ---
 
 ## **Contribute**
 
-We welcome contributions to improve the guide! If you notice any errors or have suggestions, feel free to open an issue or submit a pull request.  
+We welcome contributions to improve the guide! If you notice any errors or have suggestions, feel free to open an issue or submit a pull request. *This guide is under development so do not expect it to be 100% perfect*
 
+---
+
+## **Support Server**
+
+Join our discord server to get updates of the project and give us your feedbacks there too! Link: https://discord.gg/tbHbnvdXKR
 ---
 
 ## **License**
