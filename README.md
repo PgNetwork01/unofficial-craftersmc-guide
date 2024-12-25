@@ -22,11 +22,11 @@ Join an active and diverse community of players as you explore everything **Craf
 
 ## **Features of This Guide**
 
-The **CraftersMC Guides** almost covers every aspect of progression in SkyBlock, including:  
+The **CraftersMC Guides** almost covers every aspect of progression in SkyBlock, these are the current guides available:
 
-1. **Starter**
-2. **Intermediate (2 Parts)**
-3. **Advanced**
+1. **Starter Guide**
+2. **Intermediate Guide (2 Parts)**
+3. **Advanced Guide**
 4. **Bazaar Guide**
 5. **Accessories Guide**
 6. **Queries related to Guides**
