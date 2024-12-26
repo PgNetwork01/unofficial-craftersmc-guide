@@ -3,13 +3,12 @@ body {
   line-height: 1.6;
   background-color: #f5f7fa;
   margin: 20px;
-  font-weight: 950;
 }
 
 .title {
   text-align: center;
   font-size: 28px;
-  font-weight: extrablack;
+  font-weight: 950;
   color: #000000;
   margin-bottom: 20px;
 }
