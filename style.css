@@ -48,7 +48,7 @@ body {
   content: '\25B6';
   font-size: 16px;
   margin-left: auto;
-  transition: transform 0.2s;
+  transition: transform 1s;
 }
 
 .collapsible.active::after {
