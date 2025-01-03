@@ -436,25 +436,19 @@
     </footer>
 
     <script>
-      const collapsibles = document.querySelectorAll('.collapsible');
+  const collapsibles = document.querySelectorAll('.collapsible');
 
-      collapsibles.forEach((collapsible) => {
-        collapsible.addEventListener('click', () => {
-          collapsible.classList.toggle('active');
-          const content = collapsible.nextElementSibling;
-          content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-      });
-      document.querySelectorAll('.collapsible').forEach(item => {
-  item.addEventListener('click', function() {
-    this.classList.toggle('active');
-    let content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
+  collapsibles.forEach((collapsible) => {
+    collapsible.addEventListener('click', () => {
+      collapsible.classList.toggle('active');
+      const content = collapsible.nextElementSibling;
+      content.classList.toggle('active');
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = "200px";
+      }
+    });
   });
-});
-    </script>
+</script>
 </body>
