@@ -60,8 +60,10 @@ body {
   padding: 20px;
   border-top: 1px solid #e2e8f0;
   background: #f9fafb;
-  max-height: 200px; 
-  overflow-y: auto; 
+  max-height: 0px; 
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+  
 }
 
 .content::-webkit-scrollbar {
