@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -416,44 +414,36 @@
     </div>
 
     <div class="section-separator"></div>
-   
     <!-- Credits Section -->
-    <button class="collapsible">Credits</button>
-    <div class="content">
-      <div class="credits" style="background-color: #C5C6C7; padding: 20px; margin-top: 20px; text-align: center;">
-        <h2>Credits</h2>
-        <p><strong>Coder:</strong> TGJASSIYT (Discord Username — jassi_xc)</p>
-        <p><strong>Coder:</strong> TechonTheDev (Discord Username — techonthedev)</p>
-        <p><strong>Writer:</strong> ieduoo (Discord Username — ieduoo)</p>
-        <p><strong>Advisor:</strong> AakashGupta (Discord Username — aakashgupta12)</p>
-      </div>
-      <center>
-        <a class="button" href="https://github.com/CraftersMC-Guides-Project/CraftersMC-Guides-Project.github.io">Repository</a>
-        <a class="button" href="https://discord.gg/Ydbee3NygZ">Discord</a> 
-        <a class="button" href="https://craftersmc.wiki.gg/">CraftersMC Wiki (by Peawies)</a>
-        <a class="button" href="https://craftersmc.net">CraftersMC Website (Official)</a>
-      </center>
-      <footer>
-        &copy; 2024 Guides by TGJASSIYT, ieduoo, TechonTheDev, Aakash Gupta<br>
-        <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
-      </footer>
+    <div class="credits" style="background-color: #C5C6C7; padding: 20px; margin-top: 20px; text-align: center;">
+      <h2>Credits</h2>
+      <p><strong>Coder:</strong> TGJASSIYT (Discord Username — jassi_xc)</p>
+      <p><strong>Coder:</strong> TechonTheDev (Discord Username — techonthedev)</p>
+      <p><strong>Writer:</strong> ieduoo (Discord Username — ieduoo)</p>
+      <p><strong>Advisor:</strong> AakashGupta (Discord Username — aakashgupta12)</p>
     </div>
-    <div class="section-separator"></div>
+    <center>
+      <a class="button" href="https://github.com/CraftersMC-Guides-Project/CraftersMC-Guides-Project.github.io">Repository</a>
+      <a class="button" href="https://discord.gg/Ydbee3NygZ">Discord</a>
+      <a class="button" href="https://craftersmc.wiki.gg/">CraftersMC Wiki (by Peawies)</a>
+      <a class="button" href="https://craftersmc.net">CraftersMC Website (Official)</a>
+    </center>
+    <footer>
+      &copy; 2024 Guides by TGJASSIYT, ieduoo, TechonTheDev, Aakash Gupta<br>
+      <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
+    </footer>
 
     <script>
-  const collapsibles = document.querySelectorAll('.collapsible');
+      const collapsibles = document.querySelectorAll('.collapsible');
 
-  collapsibles.forEach((collapsible) => {
-    collapsible.addEventListener('click', () => {
-      collapsible.classList.toggle('active');
-      const content = collapsible.nextElementSibling;
-      content.classList.toggle('active');
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = "200px";
-      }
-    });
-  });
-</script>
+      collapsibles.forEach((collapsible) => {
+        collapsible.addEventListener('click', () => {
+          collapsible.classList.toggle('active');
+          const content = collapsible.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    </script>
 </body>
+
+                                                                              </html>
