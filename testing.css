@@ -1,1 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
 
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f1f1f1;
+    padding: 0 10px;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.content.open {
+    max-height: 200px; /* Set the height to 200px */
+    overflow-y: scroll; /* Allow vertical scrolling */
+}
