@@ -63,8 +63,10 @@ body {
   max-height: 200px; 
   overflow-y: auto;
   transition: max-height 1s ease-out;
-  
+    
 }
+/* this went badly */
+
 
 .content::-webkit-scrollbar {
   width: 12px; 
