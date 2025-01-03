@@ -1,0 +1,102 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  margin: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1E90FF;
+  margin-bottom: 20px;
+}
+
+.doc-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-separator {
+  border-bottom: 2px solid #f1f1f1;
+}
+
+.collapsible {
+  width: 100%;
+  background-color: #1E90FF;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.collapsible:hover {
+  background-color: #334155;
+}
+
+.collapsible::after {
+  content: '\25B6';
+  font-size: 16px;
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.collapsible.active::after {
+  transform: rotate(90deg);
+}
+
+.content {
+  display: block;
+  max-height: 0; /* Initially collapsed */
+  overflow: hidden; /* Hide overflow */
+  background: #f9fafb;
+  transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.3s ease; /* Transition for smooth opening/closing */
+  opacity: 0; /* Initially hidden */
+  padding: 0 20px; /* Padding when collapsed */
+}
+
+.content.expanded {
+  max-height: 100px; /* Set a high enough value to accommodate most content */
+  opacity: 1; /* Make visible */
+  overflow-y: auto; /* Allows scrolling for long text */
+  padding: 10px 20px; /* Add some padding when expanded */
+}
+
+.content.expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content.expanded::-webkit-scrollbar-thumb {
+  background: #1E90FF;
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.credits {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.credits p {
+  margin: 5px 0;
+}
