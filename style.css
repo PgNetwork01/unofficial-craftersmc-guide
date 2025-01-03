@@ -38,6 +38,7 @@ body {
   outline: none;
   display: flex;
   align-items: center;
+  transition: background-color 1s ease;
 }
 
 .collapsible:hover {
@@ -60,12 +61,15 @@ body {
   padding: 20px;
   border-top: 1px solid #e2e8f0;
   background: #f9fafb;
-  max-height: 200px; 
+  max-height: 0px; 
   overflow-y: auto;
   transition: max-height 1s ease-out;
     
 }
 /* this went badly */
+.content.active {
+  max-height: 200px;
+}
 
 
 .content::-webkit-scrollbar {
