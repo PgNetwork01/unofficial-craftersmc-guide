@@ -1,9 +1,13 @@
-modules = ["web"]
-run = "index.html"
+modules = ["web", "nodejs"]
+run = "npx http-server"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "index.html"]
+run = ["sh", "-c", "npx http-server"]
+
+[[ports]]
+localPort = 3000
+externalPort = 80
 
