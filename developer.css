@@ -25,6 +25,7 @@ body {
   border-bottom: 2px solid #f1f1f1;
 }
 
+/*
 .collapsible {
   width: 100%;
   background-color: #1E90FF;
@@ -38,6 +39,23 @@ body {
   outline: none;
   display: flex;
   align-items: center;
+}
+*/
+
+.collapsible {
+    background-color: #1E90FF;
+    color: white;
+    cursor: pointer;
+    padding: 16px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 .collapsible:hover {
