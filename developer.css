@@ -73,14 +73,32 @@ body {
   transform: rotate(90deg);
 }
 
-.content {
+/*.content {
   display: none; 
   padding: 20px;
   border-top: 1px solid #e2e8f0;
   background: #f9fafb;
   max-height: 200px; 
   overflow-y: auto; 
+}*/
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f1f1f1;
+  padding: 0 10px;
 }
+
+.content p {
+  margin: 10px 0;
+}
+
+.content.open {
+  max-height: 200px; /* Set the height to 200px */
+  overflow-y: scroll; /* Allow vertical scrolling */
+}
+
 
 .content::-webkit-scrollbar {
   width: 12px; 
