@@ -20,7 +20,7 @@ Access point: developer.html at end of url-->
   <div class="doc-container">
     <!-- Starter Guide -->
     <button class="collapsible">Starter Guide</button>
-    <div class="content open">
+    <div class="content">
       <a id="StarterGuide"></a>
       <p><strong>Farm wheat in Harvest Heaven</strong></p>
       <ul>
@@ -448,9 +448,9 @@ Access point: developer.html at end of url-->
       });
     </script>-->
     <script>
-      document.getElementsByClassName("collapsible");
+      document.addEventListener("DOMContentLoaded", function() {
+          var coll = document.getElementsByClassName("collapsible");
           var i;
-
           for (i = 0; i < coll.length; i++) {
               coll[i].addEventListener("click", function() {
                   this.classList.toggle("active");
@@ -463,7 +463,7 @@ Access point: developer.html at end of url-->
               });
           }
       });
-
+      
     </script>
 </body>
 
