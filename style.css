@@ -128,3 +128,12 @@ a.button {
   border-radius: 5px;
   font-family: 'Cabin', sans-serif;
 }
+/*icons*/
+
+i.emerald {
+    background: url('emerald.png');
+    height: auto;
+    width: 20px;
+    display: block;
+}
+
