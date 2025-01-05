@@ -25,23 +25,6 @@ body {
   border-bottom: 2px solid #f1f1f1;
 }
 
-/*
-.collapsible {
-  width: 100%;
-  background-color: #1E90FF;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  border: none;
-  outline: none;
-  display: flex;
-  align-items: center;
-}
-*/
-
 .collapsible {
     background-color: #1E90FF;
     color: white;
@@ -73,15 +56,6 @@ body {
   transform: rotate(90deg);
 }
 
-/*.content {
-  display: none; 
-  padding: 20px;
-  border-top: 1px solid #e2e8f0;
-  background: #f9fafb;
-  max-height: 200px; 
-  overflow-y: auto; 
-}*/
-
 .content {
   max-height: 0;
   overflow: hidden;
@@ -95,8 +69,8 @@ body {
 }
 
 .content.open {
-  max-height: 200px; /* Set the height to 200px */
-  overflow-y: scroll; /* Allow vertical scrolling */
+  max-height: 200px;
+  overflow-y: scroll;
 }
 
 
@@ -105,7 +79,7 @@ body {
 }
 
 .content::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #919191; 
 }
 
 .content::-webkit-scrollbar-thumb {
