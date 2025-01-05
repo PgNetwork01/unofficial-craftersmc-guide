@@ -79,11 +79,11 @@ body {
 }
 
 .content::-webkit-scrollbar-track {
-  background: #919191; 
+  background: #999; 
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #777; 
   border-radius: 10px; 
 }
 
