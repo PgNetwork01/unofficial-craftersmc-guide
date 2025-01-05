@@ -60,7 +60,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s ease;
-  background-color: #f2f3f4;
+  background-color: #e7eae5;
   padding: 0 10px;
 }
 
