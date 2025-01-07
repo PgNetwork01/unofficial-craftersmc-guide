@@ -17,8 +17,6 @@
       text-align: center;
     }
 
-   
-
     .title {
       font-size: 2.5rem;
       margin: 20px 0;
@@ -40,35 +38,33 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       overflow-x: auto;
     }
-    @media (max-width: 600px) {
-      .seller-list table, .seller-list th, .seller-list td {
-        display: block;
-        width: 100%;
-        padding: 5px;
-      }
-      .seller-list th, .seller-list td {
-        box-sizing: border-box;
-      }
+
+    table {
+      color: #000000;
+      padding: 5px;
+      border: 1px solid #d3d3d3;
+      border-collapse: collapse;
+      font-size: 1rem;
+      width: 100%;
+      table-layout: auto;
+      min-width: 600px;
     }
 
-    .seller {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 20px;
-      margin: 5px 0;
+    th, td {
       border-bottom: 1px solid #d3d3d3;
-      color: #000000;
-      font-size: 1.1rem;
+      padding: 10px;
+      word-wrap: break-word;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f9f9f9;
+      color: #333;
     }
 
     img.rank {
       height: 15px;
       width: auto;
-    }
-
-    .seller span {
-      font-weight: bold;
     }
 
     .warning {
@@ -83,29 +79,27 @@
       font-size: 0.8rem;
       color: #aaa;
     }
-    table {
-      color: #000000;
-      padding: 5px;
-      border: 1px solid #d3d3d3;
-      border-collapse: collapse;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 1.1rem;
-      width: 100%;
-      overflow-x: auto;
+
+    @media (max-width: 600px) {
+      .seller-list {
+        padding: 10px;
+      }
+
+      table {
+        font-size: 0.9rem;
+        overflow-x: auto;
+      }
+
+      th, td {
+        padding: 8px;
+      }
     }
-    th, td {
-      border-bottom: 1px solid #d3d3d3;
-      padding: 20px;
-      width: 25%
-    }
-    
   </style>
 </head>
 <body>
   <a class="button" href="index.html">Go Back To The Guide</a>
   <h1 class="title">CraftersMC Trusted Rank Sellers</h1>
-  <h3 style="color:LightSlateGray"><b>Make sure your device is in landscape mode for the best experience</b></h3>
+  <h3 style="color:LightSlateGray"><b>Rotate to landscape for the best experience or scroll horizontally on portrait screen devices.</b></h3>
   <div class="seller-list">
     <table>
       <tr>
@@ -115,48 +109,47 @@
         <th><u>Status</u></th>
       </tr>
       <tr>
-        <td><img class="rank" src="helper.png" alt=Helper></td>
+        <td><img class="rank" src="helper.png" alt="Helper"></td>
         <td><b>John9678</b></td>
         <td><b style="color:LightSlateGray;">Unknown</b></td>
         <td><b style="color:Green;">Selling</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="emerald.png" alt=emerald></td>
+        <td><img class="rank" src="emerald.png" alt="emerald"></td>
         <td><b>Madstar0401YT</b></td>
         <td><b style="color:Red;">No Gems</b></td>
         <td><b style="color:Green;">Selling</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="player.png" alt=player></td>
+        <td><img class="rank" src="player.png" alt="player"></td>
         <td><b>Tekkxz</b></td>
         <td><b style="color:Red;">No Gems</b></td>
         <td><b style="color:Green;">Selling</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="emerald.png" alt=emerald></td>
+        <td><img class="rank" src="emerald.png" alt="emerald"></td>
         <td><b>MythicalPanda30</b></td>
         <td><b style="color:Red;">No Gems</b></td>
         <td><b style="color:Green;">Selling</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="emerald.png" alt=emerald></td>
+        <td><img class="rank" src="emerald.png" alt="emerald"></td>
         <td><b>LE2_FRENZY</b></td>
         <td><b style="color:#51DA45;">Gems</b></td>
         <td><b style="color:Red;">Inactive</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="emerald.png" alt=emerald></td>
+        <td><img class="rank" src="emerald.png" alt="emerald"></td>
         <td><b>PledgeFree</b></td>
         <td><b style="color:#51DA45;">Gems</b></td>
         <td><b style="color:Red;">Inactive</b></td>
       </tr>
       <tr>
-        <td><img class="rank" src="emerald.png" alt=emerald></td>
+        <td><img class="rank" src="emerald.png" alt="emerald"></td>
         <td><b>HollowSpooky</b></td>
         <td><b style="color:#51DA45;">Gems</b></td>
         <td><b style="color:Green;">Selling</b></td>
       </tr>
-      
     </table>
   </div>
 
