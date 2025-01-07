@@ -30,6 +30,7 @@ The **CraftersMC Guides** almost covers every aspect of progression in SkyBlock,
 4. **Bazaar Guide**
 5. **Accessories Guide**
 6. **Queries related to Guides**
+7. **Rank Sellers Lists**
 
 ---
 
