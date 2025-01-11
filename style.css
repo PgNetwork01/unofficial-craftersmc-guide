@@ -137,4 +137,8 @@ i.emerald {
     width: 20px;
     display: block;
 }
+/*hollow circle*/
 
+.hollow-bullets li {
+  list-style-type: circle;
+}
