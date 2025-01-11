@@ -129,9 +129,35 @@ a.button {
   border-radius: 5px;
   font-family: 'Cabin', sans-serif;
 }
-/*icons*/
+/*universal table style*/
 
-i.emerald {
+table {
+      color: #222;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-collapse: separate; /* Change from collapse to separate */
+      border-radius: 10px; /* Add border-radius to the table */
+      font-size: 1rem;
+      width: 100%;
+      table-layout: auto;
+      min-width: 600px;
+      overflow: hidden; /* Add overflow hidden to ensure rounded corners are applied */
+   }
+
+   th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px; 
+      word-wrap: break-word;
+      text-align: center;
+   }
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+.emerald {
     background: url('emerald.png');
     height: auto;
     width: 20px;
