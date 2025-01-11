@@ -156,6 +156,19 @@ table {
       background-color: #007bff;
       color: #fff;
     }
+    @media (max-width: 600px) {
+      .seller-list {
+        padding: 10px;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th, td {
+        padding: 10px;
+      }
+    }
 
 .emerald {
     background: url('emerald.png');
