@@ -1,4 +1,4 @@
-modules = ["web", "nodejs"]
+modules = ["web", "nodejs-20"]
 run = "npx http-server"
 
 [nix]
@@ -10,4 +10,8 @@ run = ["sh", "-c", "npx http-server"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
 
