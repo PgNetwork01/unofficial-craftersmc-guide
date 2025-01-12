@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: #f9f9f9;
+        }
+
+        /* Top Navbar */
+        .navbar {
+            background: #007bff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .menu-icon,
+        .navbar .action-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .navbar .menu-icon {
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(to bottom, rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.8)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            padding: 20px;
+            margin-top: 56px; /* Adjusted for fixed navbar */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .hero .cta-btn {
+            background: white;
+            color: #007bff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero .cta-btn:hover {
+            background: #0056b3;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Bottom Navbar */
+        .bottom-nav {
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #ddd;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .bottom-nav a:hover {
+            color: #0056b3;
+        }
+
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .bottom-nav .nav-item span {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <span class="menu-icon">&#9776;</span>
+            <img src="https://via.placeholder.com/40" alt="Logo" style="height: 40px;">
+        </div>
+        <div>
+            <span class="action-icon">&#128269;</span>
+            <span class="action-icon">&#8942;</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Hi, we're Crafters</h1>
+        <p>Explore a SkyBlock server packed with entertainment. Start your journey now on Minecraft: Bedrock Edition!</p>
+        <button class="cta-btn">Play Now</button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="#" class="nav-item">
+            <span>&#9654;</span>
+            <small>Play Now</small>
+        </a>
+        <a href="#" class="nav-item">
+            <span>&#8505;</span>
+            <small>Support</small>
+        </a>
+        <a href="#" class="nav-item">
+            <span>&#128717;</span>
+            <small>Store</small>
+        </a>
+        <a href="#" class="nav-item">
+            <span>&#9881;</span>
+            <small>Rules</small>
+        </a>
+        <a href="#" class="nav-item">
+            <span>&#128276;</span>
+            <small>Alerts</small>
+        </a>
+    </div>
+</body>
+</html>
