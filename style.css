@@ -3,6 +3,9 @@ body {
   line-height: 1.6;
   background-color: #f5f7fa;
   margin: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -22,24 +25,20 @@ body {
   overflow: hidden;
 }
 
-.section-separator {
-  border-bottom: 2px solid #f1f1f1;
-}
-
 .collapsible {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    padding: 16px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    transition: background-color 1s ease;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: background-color 1s ease;
 }
 
 .collapsible:hover {
@@ -76,20 +75,20 @@ body {
 
 
 .content::-webkit-scrollbar {
-  width: 12px; 
+  width: 12px;
 }
 
 .content::-webkit-scrollbar-track {
-  background: #c2c2c2; 
+  background: #c2c2c2;
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: #888; 
-  border-radius: 10px; 
+  background: #888;
+  border-radius: 10px;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .content ul {
@@ -129,50 +128,72 @@ a.button {
   border-radius: 5px;
   font-family: 'Cabin', sans-serif;
 }
+
 /*universal table style*/
 
 table {
-      color: #222;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-collapse: separate; /* Change from collapse to separate */
-      border-radius: 10px; /* Add border-radius to the table */
-      font-size: 1rem;
-      width: 100%;
-      table-layout: auto;
-      min-width: 600px;
-      overflow: hidden; /* Add overflow hidden to ensure rounded corners are applied */
-   }
+  color: #fff;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  /* Change from collapse to separate */
+  border-radius: 10px;
+  /* Add border-radius to the table */
+  font-size: 1rem;
+  width: 100%;
+  table-layout: auto;
+  min-width: 600px;
+  overflow: hidden;
+  /* Add overflow hidden to ensure rounded corners are applied */
+}
 
-   th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 10px; 
-      word-wrap: break-word;
-      text-align: center;
-   }
-    }
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  word-wrap: break-word;
+  text-align: center;
+}
 
-    th {
-      background-color: #007bff;
-      color: #fff;
-    }
-    @media (max-width: 600px) {
-      .seller-list {
-        padding: 10px;
-      }
 
-      table {
-        font-size: 0.9rem;
-      }
+th {
+  background-color: #007bff;
+  color: #fff;
+}
 
-      th, td {
-        padding: 10px;
-      }
-    }
+@media (max-width: 600px) {
+  .seller-list {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}
 
 .emerald {
-    background: url('emerald.png');
-    height: auto;
-    width: 20px;
-    display: block;
+  background: url('emerald.png');
+  height: auto;
+  width: 20px;
+  display: block;
+}
+
+section {
+  background-color: #212121;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px #000;
+  color: #fff;
+  padding: 10px;
+  margin: 20px 0px;
+}
+
+section a {
+  color: dodgerblue;
+  text-decoration: none;
 }
