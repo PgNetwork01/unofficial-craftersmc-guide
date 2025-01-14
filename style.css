@@ -106,9 +106,28 @@ body {
 
 footer {
   margin-top: 20px;
+  padding: 10px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: #fff;
+  background: #111;
+  width: -webkit-fill-available;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 0px 15px 0px;
+}
+
+footer b {
+  color: #3d3c3c;
 }
 
 .credits {
@@ -228,4 +247,9 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+
+.links {
+  color: #007bff;
+  text-decoration: none;
 }
