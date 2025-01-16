@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftersMC Guides</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 20px;
+            overflow-y: auto;
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-top: 80px;
+        }
+
+        .card-container {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            position: relative;
+            width: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            z-index: 2;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                height: auto;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img src="image8299.png" alt="Card Image">
+            <div class="card-content">
+                <h3>Starter Guide</h3>
+                <p>A new journey begins...</p>
+                <a href="starter-guide.html"><button>Read More</button></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image8298.png" alt="Card Image">
+            <div class="card-content">
+                <h3>Intermediate Guide</h3>
+                <p>You are not new, neither the veteran...</p>
+                <a href="intermediate-guide.html"><button>Read More</button></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Backgrounds/IMG_4502.jpeg" alt="Card Image">
+            <div class="card-content">
+                <h3>Intermediate Guide Part 2 - Slayers Edition</h3>
+                <p>You are still not new, neither the veteran...</p>
+                <a href="intermediate-guide2.html"><button>Read More</button></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image8297.png" alt="Card Image">
+            <div class="card-content">
+                <h3>Advanced Guide</h3>
+                <p>The journey does not end here, it continues...</p>
+                <a href="advanced-guide.html"><button>Read More</button></a>
+            </div>
+        </div>
+    <div class="card">
+        <img src="image8307.png" alt="Card Image">
+        <div class="card-content">
+            <h3>Accessories Guide</h3>
+            <p>Find out which reforges are the best to use for each rarity.</p>
+            <a href="accessories-guide.html"><button>Read More</button></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="bazaarCardImage.png" alt="Card Image">
+        <div class="card-content">
+            <h3>Bazaar Guide</h3>
+            <p>Find out what is bazaar and what to do in it.</p>
+            <a href="bazaar-guide.html"><button>Read More</button></a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="Backgrounds/IMG_4504.jpeg" alt="Card Image">
+        <div class="card-content">
+            <h3>Queries</h3>
+            <p>Frequently asked questions and quick links related to the guides above.</p>
+            <a href="queries.html"><button>Read More</button></a>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
