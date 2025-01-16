@@ -18,7 +18,7 @@ body {
   font-weight: 950;
   color: #007bff; /* Changed to blue */
   margin-bottom: 20px;
-  text-shadow: 0px 0px 10px #0056b3;
+  text-shadow: 0px 0px 2px #0056b3;
 }
 
 .doc-container {
