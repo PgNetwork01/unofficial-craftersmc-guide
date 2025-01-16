@@ -210,7 +210,7 @@ section a {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: #ffffff;
   width: 100%;
   padding: 15px;
@@ -220,14 +220,14 @@ header {
 }
 
 nav a {
-  color: #007bff;
+  color: #ffffff;
   text-decoration: none;
   transition: 0.2s;
   font-size: small;
 }
 
 nav a:hover {
-  color: #0056b3;
+  color: #aaaaaa;
   text-decoration: underline;
 }
 
