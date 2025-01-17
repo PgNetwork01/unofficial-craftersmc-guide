@@ -36,7 +36,7 @@
     .seller-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-center; /* Align to the left */
+      justify-content: center; /* Center the cards */
       width: 90%;
       margin: 0 auto;
       padding: 20px;
@@ -50,7 +50,8 @@
       border-radius: 10px;
       padding: 15px; /* Reduced padding */
       margin: 10px;
-      width: 180px; /* Adjusted width to make cards smaller */
+      width: auto; /* Set width to auto to adjust according to content */
+      max-width: 220px; /* Set a maximum width for the cards */
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
@@ -61,8 +62,9 @@
     }
 
     .seller-card img {
-      height: 50px;
-      width: auto;
+      height: auto; /* Allow the image to maintain its aspect ratio */
+      width: 100%; /* Make the image responsive */
+      max-height: 50px; /* Set a maximum height for the image */
     }
 
     .status {
@@ -146,7 +148,7 @@
       <img class="rank" src="emerald.png" alt="emerald">
       <h3><b>HollowSpooky</b></h3>
       <p><b>Gems:</b> <span style="color:#82EB53;">Gems</span></p>
-      <p class ="status Selling">Status: Selling</p>
+      <p class="status Selling">Status: Selling</p>
       <p><b>Discord:</b> <span>hollowspooky</span></p>
     </div>
     <div class="seller-card">
@@ -206,7 +208,7 @@
       <p><b>Discord:</b> <span>connercavo</span></p>
     </div>
     <div class="seller-card">
-      <img class="rank" src="emerald.png " alt="emerald">
+ <img class="rank" src="emerald.png" alt="emerald">
       <h3><b>LE2_FRENZY</b></h3>
       <p><b>Gems:</b> <span>Gems</span></p>
       <p class="status Inactive">Status: Inactive</p>
