@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CraftersMC Unicode Guide</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
 
   <style>
     body {
@@ -41,6 +40,7 @@
 
     .container {
       width: 90%;
+      max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       background: #ffffff;
@@ -54,21 +54,12 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       background-color: #f1f1f1;
+      overflow: hidden;
     }
 
     .section h3 {
       cursor: pointer;
       color: #007bff;
-    }
-
-    a {
-      color: #000;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: #333;
     }
 
     .content {
@@ -80,12 +71,20 @@
     }
 
     .content.active {
-      max-height: 1000px;
+      max-height: 1000px; /* Arbitrarily high value to ensure content fits */
       padding: 10px;
-      overflow: auto;
     }
 
-    ol {
+    a {
+      color: #007bff; /* Ensures links are blue */
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul, ol {
       margin-left: 20px;
       text-align: left;
     }
