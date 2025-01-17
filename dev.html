@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             margin: 20px;
@@ -17,11 +17,30 @@
             background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
             background-size: cover;
             background-repeat: no-repeat;
-            padding-top: 80px;
+        }
+
+        .top-button-container {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .top-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .top-button:hover {
+            background-color: #0056b3;
         }
 
         .card-container {
-            margin-top: 40px;
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
@@ -116,6 +135,9 @@
     </style>
 </head>
 <body>
+    <div class="top-button-container">
+        <button class="top-button">Go back to Homepage</button>
+    </div>
     <div class="card-container">
         <div class="card">
             <img src="image8299.png" alt="Card Image">
@@ -149,30 +171,6 @@
                 <a href="advanced-guide.html"><button>Read More</button></a>
             </div>
         </div>
-    <div class="card">
-        <img src="image8307.png" alt="Card Image">
-        <div class="card-content">
-            <h3>Accessories Guide</h3>
-            <p>Find out which reforges are the best to use for each rarity.</p>
-            <a href="accessories-guide.html"><button>Read More</button></a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="bazaarCardImage.png" alt="Card Image">
-        <div class="card-content">
-            <h3>Bazaar Guide</h3>
-            <p>Find out what is bazaar and what to do in it.</p>
-            <a href="bazaar-guide.html"><button>Read More</button></a>
-        </div>
-    </div>
-    <div class="card">
-        <img src="Backgrounds/IMG_4504.jpeg" alt="Card Image">
-        <div class="card-content">
-            <h3>Queries</h3>
-            <p>Frequently asked questions and quick links related to the guides above.</p>
-            <a href="queries.html"><button>Read More</button></a>
-        </div>
-    </div>
     </div>
 </body>
 </html>
