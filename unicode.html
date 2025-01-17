@@ -6,7 +6,7 @@
   <title>CraftersMC Unicode Guide</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
-  
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -66,6 +66,11 @@
       text-decoration: none;
     }
 
+    a:hover {
+      text-decoration: underline;
+      color: #333;
+    }
+
     .content {
       max-height: 0;
       overflow: hidden;
@@ -78,6 +83,19 @@
       max-height: 1000px;
       padding: 10px;
       overflow: auto;
+    }
+
+    .content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
+      background: #007bff;
+      border-radius: 10px;
+    }
+
+    .content::-webkit-scrollbar-thumb:hover {
+      background: #0056b3;
     }
 
     ol {
