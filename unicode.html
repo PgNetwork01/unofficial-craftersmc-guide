@@ -21,7 +21,6 @@
       font-size: 2.5rem;
       margin: 20px 0;
       color: #000;
-      text-shadow: none;
     }
 
     .button {
@@ -62,6 +61,11 @@
       color: #007bff;
     }
 
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
     .content {
       max-height: 0;
       overflow: hidden;
@@ -71,8 +75,18 @@
     }
 
     .content.active {
-      max-height: 500px;
+      max-height: 1000px;
       padding: 10px;
+      overflow: auto;
+    }
+
+    ol {
+      margin-left: 20px;
+      text-align: left;
+    }
+
+    li {
+      margin: 5px 0;
     }
 
     footer {
@@ -111,8 +125,8 @@
     <div class="section">
       <h3 onclick="toggleContent(this)">Introduction</h3>
       <div class="content">
-        <p>Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. He is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the <a href="https://unicode-explorer.com/b/E000">Unicode.</a></p>
-        <p>Below is a chart of the current locations of the ingame Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.</p>
+        <p>Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. Here is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the <a href="https://unicode-explorer.com/b/E000">Unicode.</a></p>
+        <p>Below is a chart of the current locations of the in-game Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.</p>
       </div>
     </div>
 
@@ -138,10 +152,10 @@
       <div class="content">
         <a class="button" href="https://unicode-explorer.com/b/E000">Unicode Explorer</a>
         <ol>
-          <li>First open the unicode explorer from the button above, after going there you will see plenty of unicode values.</li>
-          <li>You can scroll to find plenty of unicode values, ranging from E000 to EFFF. Find the unicode value you want to copy and click it.</li>
-          <li>After clicking the unicode value you will see a few buttons. Click copy, it should say "Copied to clipboard".</li>
-          <li>Open Minecraft and then join CraftersMC, In a book and quill (purchasable from the <a href="https://craftersmc.wiki.gg/wiki/Librarian_NPC">Librarian NPC</a>) paste the unicode value(s) that you copied.</li>
+          <li>Open the Unicode Explorer from the button above. You will see plenty of Unicode values.</li>
+          <li>Scroll to find values ranging from E000 to EFFF. Click the value you want to copy.</li>
+          <li>Click copy on the value page. It should say "Copied to clipboard".</li>
+          <li>Open Minecraft, join CraftersMC, and paste the Unicode value into your Book and Quill.</li>
         </ol>
         <img class="tutorial" src="UnicodeTutorial1.png" alt="Step 1">
         <img class="tutorial" src="UnicodeTutorial2.jpeg" alt="Step 2">
@@ -154,16 +168,15 @@
       <h3 onclick="toggleContent(this)">Direct Copy Unicode Values</h3>
       <div class="content">
         <a class="button" href="https://irrl.dev/glyph">Irrl's Glyph</a>
-        <p>After clicking on the button above, you will be redirected to a site where all glyphs(All Icons Simply) will be available to copy instantly one by one without needing to use Unicode Explorer. Please wait for a while so all the glyphs can load properly. After the glyphs are loaded, click on those you want and they will be copied to your clipboard instantly and then you can paste them in your book n quill in CraftersMC.</p>
+        <p>Click the button above to access glyphs for copying. After loading, click on the glyph you want, and it will be copied to your clipboard. Paste it in your Book and Quill in CraftersMC.</p>
       </div>
     </div>
 
     <div class="section">
       <h3 onclick="toggleContent(this)">Notes</h3>
       <div class="content">
-        <p>Not all unicode values will work, E400-407 are the store ranks whereas E420-425 are staff ranks.
-If you see nothing appear, you can try a different unicode value. That may work instead.</p>
-        <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a UNICODE value using the websites given above.</b>
+        <p>Not all Unicode values will work. E400-407 are store ranks, whereas E420-425 are staff ranks. If nothing appears, try a different value.</p>
+        <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a Unicode value using the websites given above.</b>
       </div>
     </div>
   </div>
