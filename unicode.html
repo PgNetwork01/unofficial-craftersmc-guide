@@ -63,9 +63,16 @@
     }
 
     .content {
-      display: none;
-      padding: 10px;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
       border-top: 1px solid #ddd;
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    }
+
+    .content.active {
+      max-height: 500px;
+      padding: 10px;
     }
 
     footer {
@@ -168,7 +175,7 @@ If you see nothing appear, you can try a different unicode value. That may work 
   <script>
     function toggleContent(element) {
       const content = element.nextElementSibling;
-      content.style.display = content.style.display === "block" ? "none" : "block";
+      content.classList.toggle("active");
     }
   </script>
 </body>
