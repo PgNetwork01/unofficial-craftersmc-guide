@@ -20,63 +20,11 @@
     .title {
       font-size: 2.5rem;
       margin: 20px 0;
-      color: #222;
+      color: #000;
+      text-shadow: none;
     }
 
-    .credits {
-      font-size: 0.9rem;
-      color: #6c757d;
-      margin-bottom: 20px;
-    }
-
-    .seller-list {
-      width: 90%;
-      margin: 0 auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow-x: auto;
-    }
-
-    table {
-      color: #222;
-      padding: 5px;
-      border: 1px solid #ddd;
-      border-collapse: separate; /* Change from collapse to separate */
-      border-radius: 10px; /* Add border-radius to the table */
-      font-size: 1rem;
-      width: 100%;
-      table-layout: auto;
-      min-width: 600px;
-      overflow: hidden; /* Add overflow hidden to ensure rounded corners are applied */
-   }
-
-   th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 10px; 
-      word-wrap: break-word;
-      text-align: center;
-   }
-    }
-
-    th {
-      background-color: #007bff;
-      color: #fff;
-    }
-
-    
-
-    img.rank {
-      height: 15px;
-      width: auto;
-    }
-    img.tutorial {
-      width: 30%;
-      height: auto;
-    }
-
-    a.button {
+    .button {
       display: inline-block;
       padding: 10px 15px;
       margin: 10px;
@@ -85,17 +33,39 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
 
-    a.button:hover {
+    .button:hover {
       background-color: #0056b3;
     }
 
-    .warning {
-      font-size: 0.9rem;
-      margin-top: 20px;
-      color: #dc3545;
-      font-style: italic;
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f1f1f1;
+    }
+
+    .section h3 {
+      cursor: pointer;
+      color: #007bff;
+    }
+
+    .content {
+      display: none;
+      padding: 10px;
+      border-top: 1px solid #ddd;
     }
 
     footer {
@@ -104,17 +74,23 @@
       color: #6c757d;
     }
 
+    img.tutorial {
+      width: 30%;
+      height: auto;
+      margin: 10px 0;
+    }
+
     @media (max-width: 600px) {
-      .seller-list {
+      .container {
         padding: 10px;
       }
 
-      table {
-        font-size: 0.9rem;
+      .section {
+        padding: 10px;
       }
 
-      th, td {
-        padding: 10px;
+      img.tutorial {
+        width: 80%;
       }
     }
   </style>
@@ -122,52 +98,78 @@
 <body>
   <a class="button" href="journey-guides.html">Go Back To Homepage</a>
   <h1 class="title">CraftersMC Unicode Guide</h1>
-  <p class="warning">Unicode guide, its so long it got its own page
-  </p>
-  <div class="seller-list">
-    <p>
-      Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. He is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the <a href="https://unicode-explorer.com/b/E000">Unicode</a>. <br>Below is a chart of the current locations of the ingame Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.<br>
+  <p class="warning">Secret Codes to paste CraftersMC emojis, ranks, icons etc without any problem! Suggested to read the guides if something goes wrong!</p>
+  
+  <div class="container">
+    <div class="section">
+      <h3 onclick="toggleContent(this)">Introduction</h3>
+      <div class="content">
+        <p>Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. He is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the <a href="https://unicode-explorer.com/b/E000">Unicode.</a></p>
+        <p>Below is a chart of the current locations of the ingame Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.</p>
+      </div>
+    </div>
 
-🙂 Unicode Between: E100-E1FF are emojis, statistic, and various glyphs.<br>
-📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience bars.<br>
-🌳 Unicode Between: E300-E320 are zone icons on the scoreboard.<br>
-🌐 Unicode Between: E400-E4FF are English ranks, rarities, and item badges.<br>
-🇹🇷 Unicode Between: E500-E5FF are Turkish ranks, rarities, and item badges.<br>
-💚 Unicode Between: E600-E660 are yellow bars and green bars.<br>
-🩶 Unicode Between: E700-E730 are gray bars.<br>
-🇫🇷 Unicode Between: E800-E8FF are French ranks, rarities, and item badges.<br>
-🇩🇪 Unicode Between: E900-E9FF are German ranks, rarities, and item badges.<br>
-  </p> 
+    <div class="section">
+      <h3 onclick="toggleContent(this)">Location Chart</h3>
+      <div class="content">
+        <ul>
+          <li>🙂 Unicode Between: E100-E1FF are emojis, statistic, and various glyphs.</li>
+          <li>📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience bars.</li>
+          <li>🌳 Unicode Between: E300-E320 are zone icons on the scoreboard.</li>
+          <li>🌐 Unicode Between: E400-E4FF are English ranks, rarities, and item badges.</li>
+          <li>🇹🇷 Unicode Between: E500-E5FF are Turkish ranks, rarities, and item badges.</li>
+          <li>💚 Unicode Between: E600-E660 are yellow bars and green bars.</li>
+          <li>🩶 Unicode Between: E700-E730 are gray bars.</li>
+          <li>🇫🇷 Unicode Between: E800-E8FF are French ranks, rarities, and item badges.</li>
+          <li>🇩🇪 Unicode Between: E900-E9FF are German ranks, rarities, and item badges.</li>
+        </ul>
+      </div>
+    </div>
 
-<h3>Irrelevantdev's (irrld) glyphs page (all glyphs in unicode)</h3>
-    <a class="button" href="https://irrl.dev/glyph">Irrld's Glyph</a>
-    Click on a glyph to copy it's unicode code. Then paste it into your book
+    <div class="section">
+      <h3 onclick="toggleContent(this)">How to use Unicode Explorer</h3>
+      <div class="content">
+        <a class="button" href="https://unicode-explorer.com/b/E000">Unicode Explorer</a>
+        <ol>
+          <li>First open the unicode explorer from the button above, after going there you will see plenty of unicode values.</li>
+          <li>You can scroll to find plenty of unicode values, ranging from E000 to EFFF. Find the unicode value you want to copy and click it.</li>
+          <li>After clicking the unicode value you will see a few buttons. Click copy, it should say "Copied to clipboard".</li>
+          <li>Open Minecraft and then join CraftersMC, In a book and quill (purchasable from the <a href="https://craftersmc.wiki.gg/wiki/Librarian_NPC">Librarian NPC</a>) paste the unicode value(s) that you copied.</li>
+        </ol>
+        <img class="tutorial" src="UnicodeTutorial1.png" alt="Step 1">
+        <img class="tutorial" src="UnicodeTutorial2.jpeg" alt="Step 2">
+        <img class="tutorial" src="UnicodeTutorial3.png" alt="Step 3">
+        <img class="tutorial" src="UnicodeTutorial4.png" alt="Step 4">
+      </div>
+    </div>
     
-      <h2><u>How to use unicode-explorer</u></h2>
-    <a class="button" href="https://unicode-explorer.com/b/E000">Unicode Explorer</a>
-    <p>
-      <ol>
-        <li>First open unicode explorer from the link, from here you will see alot of unicode values.</li>
-        <li>You can scroll to find lots of unicode values, ranging from E000 to EFFF. Find a unicode value and click it</li> 
-        <li>From here you will find a few buttons. Click copy, it should say "Copied to clipboard"</li>
-        <li>Open Minecraft and then join Craftersmc. In a book and quill (purchasable from the librarian) paste the unicode value that you copied</li>
-      </ol>
-    <img class="tutorial" src="UnicodeTutorial1.png">
-    <img class="tutorial" src="UnicodeTutorial2.jpeg">
-    <img class="tutorial" src="UnicodeTutorial3.png">
-    <img class="tutorial" src="UnicodeTutorial4.png">
-  </p>
-    <h3>Notes:</h3>
-    <p>
-      Not all unicode values will work, E400-407 are the store ranks whereas E420-425 are staff ranks.<br>
-      If you see nothing appear, you can try a different unicode value. That may work instead.<br>
-      <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a UNICODE value using the website</b> 
-    </p>
-    
+    <div class="section">
+      <h3 onclick="toggleContent(this)">Direct Copy Unicode Values</h3>
+      <div class="content">
+        <a class="button" href="https://irrl.dev/glyph">Irrl's Glyph</a>
+        <p>After clicking on the button above, you will be redirected to a site where all glyphs(All Icons Simply) will be available to copy instantly one by one without needing to use Unicode Explorer. Please wait for a while so all the glyphs can load properly. After the glyphs are loaded, click on those you want and they will be copied to your clipboard instantly and then you can paste them in your book n quill in CraftersMC.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 onclick="toggleContent(this)">Notes</h3>
+      <div class="content">
+        <p>Not all unicode values will work, E400-407 are the store ranks whereas E420-425 are staff ranks.
+If you see nothing appear, you can try a different unicode value. That may work instead.</p>
+        <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a UNICODE value using the websites given above.</b>
+      </div>
+    </div>
   </div>
 
   <footer>
     &copy; 2025 TGJASSIYT, Champ_Axis, TechonTheDev. All rights reserved.
   </footer>
+
+  <script>
+    function toggleContent(element) {
+      const content = element.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
