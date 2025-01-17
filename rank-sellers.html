@@ -53,7 +53,21 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
+    .seller-card-inactive {
+      background: #f1f1f1;
+      border: 5px solid red;
+      border-radius: 10px;
+      padding: 15px; /* Reduced padding */
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
     .seller-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .seller-card-inactive:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
@@ -171,14 +185,14 @@
       <p class="status Selling">Status: Selling</p>
       <p><b>Discord: <span>maximc88</span></b></p>
     </div>
-    <div class="seller-card">
+    <div class="seller-card-inactive">
       <img class="rank" src="player.png" alt="player">
       <h3><b>Snoop_TODD3924</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
       <p class="status Inactive">Status: Inactive</p>
       <p><b>Discord: <span>todd190201</span></b></p>
     </div>
-    <div class="seller-card">
+    <div class="seller-card-inactive">
       <img class="rank" src="emerald.png" alt="emerald">
       <h3><b>PledgeFree</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
@@ -206,7 +220,7 @@
       <p class="status Paused">Status: Paused</p>
       <p><b>Discord:<span>connercavo</span></b></p>
     </div>
-    <div class="seller-card">
+    <div class="seller-card-inactive">
       <img class="rank" src="emerald.png" alt="emerald">
       <h3><b>LE2_FRENZY</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
