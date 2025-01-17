@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             margin: 20px;
@@ -19,14 +19,37 @@
             background-repeat: no-repeat;
         }
 
+        .top-button-container {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .top-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .top-button:hover {
+            background-color: #0056b3;
+        }
+
         .card-container {
-            margin-top: 40px;
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            width: 95%;
+            height: 95%;
         }
 
         .card {
@@ -115,6 +138,11 @@
     </style>
 </head>
 <body>
+    <div class="top-button-container">
+        <a href="https://craftersmc-guides-project.github.io/home.html">
+        <button class="top-button">Go back to Homepage</button>
+        </a>
+    </div>
     <div class="card-container">
         <div class="card">
             <img src="image8299.png" alt="Card Image">
@@ -148,7 +176,7 @@
                 <a href="advanced-guide.html"><button>Read More</button></a>
             </div>
         </div>
-    <div class="card">
+        <div class="card">
         <img src="image8307.png" alt="Card Image">
         <div class="card-content">
             <h3>Accessories Guide</h3>
