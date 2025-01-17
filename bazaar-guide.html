@@ -67,6 +67,24 @@
       background: black;
       color: white;
     }
+    /*table styling*/
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+  }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 4px;
+  }
+    th {
+      background-color: #f7f7f7;
+      font-weight: bold;
+  }
+    td {
+      word-wrap: break-word;
+  }
   </style>
 </head>
 <body>
@@ -161,37 +179,37 @@
     </ul>
 
     <table>
-      <tr>
-        <th><u>Feature</u></th>
-        <th><u>Speed</u></th>
-        <th><u>Profit/Cost</u></th>
-        <th><u>Flexibilty</u></th>
-      </tr>
-      <tr>
-        <td>Sell offer:</td>
-        <td>Slower (dependent on demand)</td>
-        <td>Higher profit (usually)</td>
-        <td>More flexible, set price and wait</td>
-      </tr>
-      <tr>
-        <td>Buy offer:</td>
-        <td>Slower (dependent on demand)</td>
-        <td>Higher profit (usually)</td>
-        <td>More flexible, set price and wait</td>
-      </tr>
-      <tr>
-        <td>Instant Sell:</td>
-        <td>Fast (slightly bugged at the moment)</td>
-        <td>Lower</td>
-        <td>Not as flexible, bazaar chooses the price</td>
-      </tr>
-      <tr>
-        <td>Instant buy</td>
-        <td>Fast (slightly bugged at the moment)</td>
-        <td>Lower</td>
-        <td>Not as flexible, bazaar chooses the price</td>
-      </tr>
-    </table>
+  <tr>
+    <th>Feature</th>
+    <th>Speed</th>
+    <th>Profit/Cost</th>
+    <th>Flexibility</th>
+  </tr>
+  <tr>
+    <td>Sell offer</td>
+    <td>Slower (demand-dependent)</td>
+    <td>Higher profit (usually)</td>
+    <td>More flexible, set price & wait</td>
+  </tr>
+  <tr>
+    <td>Buy offer</td>
+    <td>Slower (demand-dependent)</td>
+    <td>Higher profit (usually)</td>
+    <td>More flexible, set price & wait</td>
+  </tr>
+  <tr>
+    <td>Instant Sell</td>
+    <td>Fast (slightly bugged now)</td>
+    <td>Lower</td>
+    <td>Not as flexible, bazaar sets price</td>
+  </tr>
+  <tr>
+    <td>Instant Buy</td>
+    <td>Fast (slightly bugged now)</td>
+    <td>Lower</td>
+    <td>Not as flexible, bazaar sets price</td>
+  </tr>
+  </table>
   </p>
 
 
