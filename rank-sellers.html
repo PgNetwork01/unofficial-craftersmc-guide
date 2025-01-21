@@ -35,8 +35,8 @@
 
     .seller-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
-      gap: 20px; /* Space between cards */
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       width: 90%;
       margin: 0 auto;
       padding: 20px;
@@ -45,38 +45,29 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .seller-card {
+    .seller-card,
+    .seller-card-inactive {
       background: #f1f1f1;
       border-radius: 10px;
-      padding: 15px; /* Reduced padding */
+      padding: 15px;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       overflow-wrap: break-word;
     }
 
     .seller-card-inactive {
-      background: #f1f1f1;
       border: 5px solid red;
-      border-radius: 10px;
-      padding: 15px; /* Reduced padding */
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .seller-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
+    .seller-card:hover,
     .seller-card-inactive:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .seller-card img {
-      height: 50px; /* Allow the image to maintain its aspect ratio */
-      width: auto; /* Make the image responsive */
-      /*max-height: 50px;  Set a maximum height for the image */
+      height: 50px;
+      width: auto;
     }
 
     .status {
@@ -110,9 +101,10 @@
       font-weight: bold;
       text-align: center;
     }
+
     .button-container {
-      text-align: center; /* Center the button */
-      margin: 20px 0; /* Add some margin for spacing */
+      text-align: center;
+      margin: 20px 0;
     }
 
     a.button:hover {
@@ -121,10 +113,10 @@
 
     .warning {
       font-size: 0.9rem;
-      margin: 20px 0; /* Adjusted margin for spacing */
+      margin: 20px 0;
       color: #DD2222;
       font-style: italic;
-      text-align: center; /* Center the warning text */
+      text-align: center;
     }
 
     footer {
@@ -136,13 +128,13 @@
 
     @media (max-width: 900px) {
       .seller-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards in a row for medium screens */
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 600px) {
       .seller-list {
-        grid-template-columns: 1fr; /* 1 card in a row for small screens */
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -198,35 +190,35 @@
       <h3><b>PledgeFree</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
       <p class="status Inactive">Status: Inactive</p>
-      <p><b>Discord:<span>pledgefree</span></b></p>
+      <p><b>Discord: <span>pledgefree</span></b></p>
     </div>
     <div class="seller-card">
       <img class="rank" src="rank/emerald.png" alt="emerald">
       <h3><b>Herejefferson</b></h3>
       <p><b>Gems: <span style="color:red;">No Gems</span></b></p>
       <p class="status Selling">Status: Selling</p>
-      <p><b>Discord:<span>herejefferson</span></b></p>
+      <p><b>Discord: <span>herejefferson</span></b></p>
     </div>
     <div class="seller-card">
       <img class="rank" src="rank/helper.png" alt="helper">
       <h3><b>John9678</b></h3>
       <p><b>Gems: <span style="color:#6c757d;">Unknown</span></b></p>
       <p class="status Paused">Status: Paused</p>
-      <p><b>Discord:</b> <span>john9678_</span></p>
+      <p><b>Discord: <span>john9678_</span></b></p>
     </div>
     <div class="seller-card">
       <img class="rank" src="rank/emerald.png" alt="emerald">
       <h3><b>Madstar0401YT</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
       <p class="status Paused">Status: Paused</p>
-      <p><b>Discord:<span>connorcavo</span></b></p>
+      <p><b>Discord: <span>connorcavo</span></b></p>
     </div>
     <div class="seller-card-inactive">
       <img class="rank" src="rank/emerald.png" alt="emerald">
       <h3><b>LE2_FRENZY</b></h3>
       <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
       <p class="status Inactive">Status: Inactive</p>
-      <p><b>Discord:<span>le2frenzy</span></b></p>
+      <p><b>Discord: <span>le2frenzy</span></b></p>
     </div>
   </div>
 
@@ -235,7 +227,7 @@
   </p>
 
   <footer>
-    &copy; 2025 TGJASSIYT, TechonTheDev. All rights reserved.
+    &copy; 2025 TGJASSIYT, TechonTheDev. All rights reserved.  
     We are not responsible if anything bad happens as in a refunding of all ranks (snax). This is a GUIDE for getting good sellers.
   </footer>
 </body>
