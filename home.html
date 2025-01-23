@@ -23,6 +23,14 @@
            -webkit-tap-highlight-color: transparent;
         }
 
+        span.no_selection {
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+        }
+
         /* Navbar styles */
         .navbar {
             background: #007bff;
@@ -402,6 +410,16 @@
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("open");
         }
+
+        function clearSelection() {
+    if(document.selection && document.selection.empty) {
+        document.selection.empty();
+    } else if(window.getSelection) {
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+    }
+        }
+        
     </script>
 </body>
 </html>
