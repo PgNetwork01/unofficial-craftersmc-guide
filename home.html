@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +19,68 @@
             color: #222;
             overflow-x: hidden;
         }
-        
-       * {
-           -webkit-tap-highlight-color: transparent;
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loader div {
+            width: 18px;
+            height: 18px;
+            background-color: #3498db;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        #loader div:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        #loader div:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .hidden {
+            display: none;
         }
 
         span.no_selection {
-    user-select: none; /* standard syntax */
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
+            user-select: none;
+            /* standard syntax */
+            -webkit-user-select: none;
+            /* webkit (safari, chrome) browsers */
+            -moz-user-select: none;
+            /* mozilla browsers */
+            -khtml-user-select: none;
+            /* webkit (konqueror) browsers */
+            -ms-user-select: none;
+            /* IE10+ */
         }
 
         /* Navbar styles */
@@ -116,7 +168,7 @@
             align-items: center;
             text-align: center;
             color: white;
-            
+
             margin-top: 56px;
             padding: 20px;
             height: calc(100vh - 56px);
@@ -298,11 +350,16 @@
             font-size: 14px;
             color: #666;
         }
-
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
+    <div id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     <!-- Top Navbar -->
     <div class="navbar">
         <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
@@ -323,7 +380,8 @@
     <!-- Hero Section -->
     <div class="hero">
         <h1>CraftersMC Guides</h1>
-        <p>Just like a captain needs a map to navigate the seas, mastering SkyBlock in CraftersMC requires a guide and the right tools to succeed</p>
+        <p>Just like a captain needs a map to navigate the seas, mastering SkyBlock in CraftersMC requires a guide and
+            the right tools to succeed</p>
         <a class="cta-btn" href="journey-guides.html">GET STARTED</a>
     </div>
 
@@ -361,7 +419,7 @@
                 <button>Learn More</button>
             </div>
         </div>
-        
+
         <div class="card">
             <img src="Backgrounds/IMG_4500.jpeg" alt="Card Image">
             <div class="card-content">
@@ -370,7 +428,7 @@
                 <button>Learn nothing</button>
             </div>
         </div>
-        
+
         <div class="card">
             <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
             <div class="card-content">
@@ -379,7 +437,7 @@
                 <button>Learn More</button>
             </div>
         </div>
-        
+
         <div class="card">
             <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
             <div class="card-content">
@@ -388,7 +446,7 @@
                 <button>Learn More</button>
             </div>
         </div>
-        
+
         <a class="card" href="journey-guides.html">
             <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
             <div class="card-content">
@@ -406,20 +464,25 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('#loader').style.display = 'none';
+        });
+
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("open");
         }
 
         function clearSelection() {
-    if(document.selection && document.selection.empty) {
-        document.selection.empty();
-    } else if(window.getSelection) {
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-    }
+            if (document.selection && document.selection.empty) {
+                document.selection.empty();
+            } else if (window.getSelection) {
+                var sel = window.getSelection();
+                sel.removeAllRanges();
+            }
         }
-        
+
     </script>
 </body>
+
 </html>
