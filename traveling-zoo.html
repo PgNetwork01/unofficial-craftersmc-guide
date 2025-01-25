@@ -148,6 +148,11 @@
 <script>
 const initialTargetTime = new Date('2025-01-27T14:30:00+05:30').getTime();
 let targetTime = initialTargetTime;
+const eventDuration = 60 * 60 * 1000;
+const intervalDuration = (2 * 24 + 14) * 60 * 60 * 1000;
+const eventAlertMessage = `
+🦁 Did you know? 🦁 The Creedon NPC is there with his random pets near the spawn inside the event stand area. Go online to buy those pets! 🐾
+`;
 
 function formatTime(date) {
     const options = { 
@@ -165,7 +170,7 @@ function formatTime(date) {
 function calculateEventTimes() {
     const eventTimes = [];
     for (let i = 0; i < 50; i++) {
-        const nextEventDate = new Date(initialTargetTime + (i * (2 * 24 + 14) * 60 * 60 * 1000));
+        const nextEventDate = new Date(initialTargetTime + (i * intervalDuration));
         eventTimes.push(formatTime(nextEventDate));
     }
     return eventTimes;
@@ -174,7 +179,7 @@ function calculateEventTimes() {
 function displayNextEvent() {
     const eventTimes = calculateEventTimes();
     const nextEvent = eventTimes[0];
-    const lastEvent = new Date(initialTargetTime - (2 * 24 + 14) * 60 * 60 * 1000);
+    const lastEvent = new Date(initialTargetTime - intervalDuration);
     document.getElementById("nextEventTime").textContent = nextEvent;
     document.getElementById("lastEventTime").textContent = formatTime(lastEvent);
 }
@@ -206,8 +211,18 @@ function toggleEventContainer() {
 }
 
 function updateNextEventTime() {
-    targetTime += (2 * 24 + 14) * 60 * 60 * 1000;  
+    targetTime += intervalDuration;  
     displayNextEvent();
+}
+
+function showEventAlert() {
+    const now = new Date().getTime();
+    const eventStartTime = targetTime;
+    const eventEndTime = targetTime + eventDuration;
+
+    if (now >= eventStartTime && now <= eventEndTime) {
+        alert(eventAlertMessage);
+    }
 }
 
 const timerInterval = setInterval(function() {
@@ -227,9 +242,11 @@ const timerInterval = setInterval(function() {
 
         document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-        const totalTime = initialTargetTime + (2 * 24 + 14) * 60 * 60 * 1000 - initialTargetTime;
+        const totalTime = intervalDuration - initialTargetTime + targetTime;
         const percentage = (remainingTime / totalTime) * 100;
         document.getElementById("progressBar").style.width = percentage + "%";
+        
+        showEventAlert();
     }
 }, 1000);
 
@@ -238,4 +255,4 @@ displayEvents();
 </script>
 
 </body>
-  </html>
+</html>
