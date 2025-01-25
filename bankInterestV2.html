@@ -9,23 +9,34 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f2f2f2;
         }
         h1 {
             font-size: 2.5em;
             font-weight: bold;
             margin-top: 60px;
+            color: #007bff;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         }
         .progress {
-            height: 20px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            transition: width 1s ease;
         }
         .timer {
             font-size: 2rem;
             font-weight: bold;
+            color: #333;
         }
         .divider {
             margin: 30px 0;
@@ -45,7 +56,6 @@
             border-bottom: 1px solid #ddd;
         }
         #nextInterestBtn {
-            margin-top: 20px;
             font-style: italic;
             background-color: #007bff;
             color: white;
@@ -61,21 +71,28 @@
             background-color: #0056b3;
         }
         .collapsible {
-            background-color: #f1f1f1;
+            background-color: #007bff;
+            color: white;
             padding: 15px 20px;
             margin-top: 10px;
-            border: 1px solid #ddd;
+            border: none;
             cursor: pointer;
             font-weight: bold;
-            color: #007bff;
             border-radius: 5px;
             font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        .collapsible:hover {
+            background-color: #0056b3;
         }
         .content {
             padding: 0 18px;
             display: none;
             overflow: hidden;
             background-color: #f9f9f9;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         .interest-container {
             margin-bottom: 20px;
@@ -96,7 +113,7 @@
     <p>Bank interest can be claimed every 31 hours from the last interest, next one starting in...</p>
 
     <div class="progress">
-        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 
     <p id="timer" class="timer"></p>
