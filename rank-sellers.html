@@ -1,148 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CraftersMC Trusted Rank Sellers</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<style>
-  body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #222;
-  text-align: left;
-  background: url("Backgrounds/1000005399-modified~2.png");
-  background-size: cover;
-  background-position-x: center;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #222;
+      text-align: left;
+      background: url("Backgrounds/1000005399-modified~2.png");
+      background-size: cover;
+      background-position-x: center;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.title {
-  font-size: 2.5rem;
-  margin: 20px 5%;
-  color: #ffffff;
-  text-align: center;
-  text-shadow: 2px 2px #000000;
-}
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.credits, footer {
-  font-size: 0.9rem;
-  color: #6c757d;
-  margin-bottom: 20px;
-  text-align: center;
-}
+    #loader div {
+      width: 18px;
+      height: 18px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
 
-.seller-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    #loader div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
 
-.seller-card,
-.seller-card-inactive {
-  background: #f1f1f1;
-  border-radius: 10px;
-  padding: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow-wrap: break-word;
-  min-height: 200px;
-}
+    #loader div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
 
-.seller-card:hover,
-.seller-card-inactive:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
+    @keyframes bounce {
 
-.seller-card img {
-  height: 50px;
-  width: auto;
-}
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
 
-.status {
-  font-weight: bold;
-}
+      40% {
+        transform: scale(1);
+      }
+    }
 
-.status.Selling {
-  color: green;
-}
+    .hidden {
+      display: none;
+    }
 
-.status.Paused {
-  color: chocolate;
-}
+    span.no_selection {
+      user-select: none;
+      /* standard syntax */
+      -webkit-user-select: none;
+      /* webkit (safari, chrome) browsers */
+      -moz-user-select: none;
+      /* mozilla browsers */
+      -khtml-user-select: none;
+      /* webkit (konqueror) browsers */
+      -ms-user-select: none;
+      /* IE10+ */
+    }
 
-.status.Inactive {
-  color: red;
-}
+    /* Navbar styles */
+    .navbar {
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
 
-.status.Unknown {
-  color: #6c757d;
-}
+    .navbar .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-a.button {
-  display: inline-block;
-  padding: 10px 15px;
-  margin: 10px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  text-align: center;
-}
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      color: #2f2f2f;
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    }
 
-.button-container {
-  text-align: center;
-  margin: 20px 0;
-}
+    .sidebar.open {
+      left: 0;
+    }
 
-a.button:hover {
-  background-color: #0056b3;
-}
+    .sidebar img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
 
-.warning {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin: 20px 5%;
-  color: #DD2222;
-  font-style: italic;
-  text-align: center;
-  text-shadow: 1px 0.9px #000000;
-}
+    .sidebar hr {
+      width: 80%;
+      border: 0;
+      height: 1px;
+      background: #2f2f2f;
+      margin: 20px 0;
+    }
 
-footer {
-  margin: 30px 5%;
-  font-size: 0.8rem;
-  color: #6c757d;
-  text-align: center;
-}
+    .sidebar a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
 
-@media (max-width: 1200px) and (min-width: 600px) {
-  .seller-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    .sidebar a:hover {
+      color: #007bff;
+    }
 
-@media (max-width: 600px) {
-  .seller-list {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .sidebar-close {
+      font-size: 1.5rem;
+      color: #2f2f2f;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin: 20px 5%;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 2px 2px #000000;
+    }
+
+    .credits,
+    footer {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .seller-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .seller-card,
+    .seller-card-inactive {
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      overflow-wrap: break-word;
+      min-height: 200px;
+    }
+
+    .seller-card:hover,
+    .seller-card-inactive:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .seller-card img {
+      height: 50px;
+      width: auto;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+
+    .status.Selling {
+      color: green;
+    }
+
+    .status.Paused {
+      color: chocolate;
+    }
+
+    .status.Inactive {
+      color: red;
+    }
+
+    .status.Unknown {
+      color: #6c757d;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .button-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    a.button:hover {
+      background-color: #0056b3;
+    }
+
+    .warning {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin: 20px 5%;
+      color: #DD2222;
+      font-style: italic;
+      text-align: center;
+      text-shadow: 1px 0.9px #000000;
+    }
+
+    footer {
+      margin: 30px 5%;
+      font-size: 0.8rem;
+      color: #6c757d;
+      text-align: center;
+    }
+
+    @media (max-width: 1200px) and (min-width: 600px) {
+      .seller-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .seller-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
+  <div id="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+    <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+    <img src="cmc-guides.png" alt="CMC Guides Logo">
+    <hr>
+    <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+    <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+    <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+    <a href="https://craftersmc.net/">CraftersMC Website</a>
+  </div>
+
   <div class="button-container">
     <a class="button" href="journey-guides.html">Go Back To Homepage</a>
   </div>
@@ -156,7 +317,7 @@ footer {
     <div class="seller-card">
       <img class="rank" src="rank/emerald.png" alt="emerald">
       <h3><b>HollowSpooky</b></h3>
-      <p><b>Gems:  <span style="color:#82EB53;">Gems</span></b></p>
+      <p><b>Gems: <span style="color:#82EB53;">Gems</span></b></p>
       <p class="status Selling">Status: Selling</p>
       <p><b>Discord: <span>hollowspooky</span></b></p>
     </div>
@@ -230,8 +391,20 @@ footer {
   </p>
 
   <footer>
-    &copy; 2025 TGJASSIYT, TechonTheDev. All rights reserved.  
-    We are not responsible if anything bad happens as in a refunding of all ranks (snax). This is a GUIDE for getting good sellers.
+    &copy; 2025 TGJASSIYT, TechonTheDev. All rights reserved.
+    We are not responsible if anything bad happens as in a refunding of all ranks (snax). This is a GUIDE for getting
+    good sellers.
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#loader').style.display = 'none';
+    });
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+  </script>
 </body>
+
 </html>

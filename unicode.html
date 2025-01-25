@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,141 @@
       background: url("Backgrounds/1000005399-modified~2.png");
       background-size: cover;
       background-position-x: center;
+    }
+
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loader div {
+      width: 18px;
+      height: 18px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    #loader div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    #loader div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    span.no_selection {
+      user-select: none;
+      /* standard syntax */
+      -webkit-user-select: none;
+      /* webkit (safari, chrome) browsers */
+      -moz-user-select: none;
+      /* mozilla browsers */
+      -khtml-user-select: none;
+      /* webkit (konqueror) browsers */
+      -ms-user-select: none;
+      /* IE10+ */
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .navbar .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      color: #2f2f2f;
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar hr {
+      width: 80%;
+      border: 0;
+      height: 1px;
+      background: #2f2f2f;
+      margin: 20px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #007bff;
+    }
+
+    .sidebar-close {
+      font-size: 1.5rem;
+      color: #2f2f2f;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
     }
 
     .title {
@@ -92,7 +228,8 @@
       text-decoration: underline;
     }
 
-    ul, ol {
+    ul,
+    ol {
       margin-left: 20px;
       text-align: left;
     }
@@ -100,7 +237,7 @@
     li {
       margin: 5px 0;
     }
-    
+
     .warning {
       margin-right: 5%;
       margin-left: 5%;
@@ -135,17 +272,45 @@
     }
   </style>
 </head>
+
 <body>
+
+  <div id="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+    <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+    <img src="cmc-guides.png" alt="CMC Guides Logo">
+    <hr>
+    <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+    <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+    <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+    <a href="https://craftersmc.net/">CraftersMC Website</a>
+  </div>
+
   <a class="button" href="journey-guides.html">Go Back To Homepage</a>
   <h1 class="title">CraftersMC Unicode Guide</h1>
-  <p class="warning">Secret Codes to paste CraftersMC emojis, ranks, icons etc without any problem! Suggested to read the guides if something goes wrong!</p>
-  
+  <p class="warning">Secret Codes to paste CraftersMC emojis, ranks, icons etc without any problem! Suggested to read
+    the guides if something goes wrong!</p>
+
   <div class="container">
     <div class="section">
       <h3 onclick="toggleContent(this)">Introduction</h3>
       <div class="content">
-        <p>Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. Here is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the <a href="https://unicode-explorer.com/b/E000">Unicode.</a></p>
-        <p>Below is a chart of the current locations of the in-game Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.</p>
+        <p>Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. Here is
+          an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find
+          the <a href="https://unicode-explorer.com/b/E000">Unicode.</a></p>
+        <p>Below is a chart of the current locations of the in-game Unicode. Once you have found the Unicode you would
+          like to use, copy and paste it into your Book and Quill.</p>
       </div>
     </div>
 
@@ -154,7 +319,8 @@
       <div class="content">
         <ul>
           <li>🙂 Unicode Between: E100-E1FF are emojis, statistic, and various glyphs.</li>
-          <li>📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience bars.</li>
+          <li>📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience
+            bars.</li>
           <li>🌳 Unicode Between: E300-E320 are zone icons on the scoreboard.</li>
           <li>🌐 Unicode Between: E400-E4FF are English ranks, rarities, and item badges.</li>
           <li>🇹🇷 Unicode Between: E500-E5FF are Turkish ranks, rarities, and item badges.</li>
@@ -182,20 +348,23 @@
         <img class="tutorial" src="UnicodeGuide/UnicodeTutorial4.png" alt="Step 4">
       </div>
     </div>
-    
+
     <div class="section">
       <h3 onclick="toggleContent(this)">Direct Copy Unicode Values</h3>
       <div class="content">
         <a class="button" href="https://irrl.dev/glyph">Irrl's Glyph</a>
-        <p>Click the button above to access glyphs for copying. After loading, click on the glyph you want, and it will be copied to your clipboard. Paste it in your Book and Quill in CraftersMC.</p>
+        <p>Click the button above to access glyphs for copying. After loading, click on the glyph you want, and it will
+          be copied to your clipboard. Paste it in your Book and Quill in CraftersMC.</p>
       </div>
     </div>
 
     <div class="section">
       <h3 onclick="toggleContent(this)">Notes</h3>
       <div class="content">
-        <p>Not all Unicode values will work. E400-407 are store ranks, whereas E420-425 are staff ranks. If nothing appears, try a different value.</p>
-        <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a Unicode value using the websites given above.</b>
+        <p>Not all Unicode values will work. E400-407 are store ranks, whereas E420-425 are staff ranks. If nothing
+          appears, try a different value.</p>
+        <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a Unicode value using the websites given
+          above.</b>
       </div>
     </div>
   </div>
@@ -205,10 +374,20 @@
   </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('#loader').style.display = 'none';
+    });
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+
     function toggleContent(element) {
       const content = element.nextElementSibling;
       content.classList.toggle("active");
     }
   </script>
 </body>
+
 </html>

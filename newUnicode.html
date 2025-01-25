@@ -1,6 +1,6 @@
 <!--
 Ill use the old website layout to remake the current unicode guide but with better abilities, animation, etc
---> 
+-->
 
 
 <!DOCTYPE html>
@@ -21,6 +21,141 @@ Ill use the old website layout to remake the current unicode guide but with bett
       background: url("Backgrounds/1000005399-modified~2.png");
       background-size: cover;
       background-position-x: center;
+    }
+
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loader div {
+      width: 18px;
+      height: 18px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    #loader div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    #loader div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    span.no_selection {
+      user-select: none;
+      /* standard syntax */
+      -webkit-user-select: none;
+      /* webkit (safari, chrome) browsers */
+      -moz-user-select: none;
+      /* mozilla browsers */
+      -khtml-user-select: none;
+      /* webkit (konqueror) browsers */
+      -ms-user-select: none;
+      /* IE10+ */
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .navbar .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      color: #2f2f2f;
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar hr {
+      width: 80%;
+      border: 0;
+      height: 1px;
+      background: #2f2f2f;
+      margin: 20px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #2f2f2f;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #007bff;
+    }
+
+    .sidebar-close {
+      font-size: 1.5rem;
+      color: #2f2f2f;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
     }
 
     .title {
@@ -44,20 +179,20 @@ Ill use the old website layout to remake the current unicode guide but with bett
     }
 
     .collapsible {
-        background-color: white;
-        color: 007bff;
-        cursor: pointer;
-        padding: 15px;
-        margin: 10px;
-        width: 100%;
-        border: 1px solid #ddd;
-        text-align: left;
-        outline: none;
-        font-size: 18px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        transition: background-color 1s ease;
+      background-color: white;
+      color: 007bff;
+      cursor: pointer;
+      padding: 15px;
+      margin: 10px;
+      width: 100%;
+      border: 1px solid #ddd;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      transition: background-color 1s ease;
     }
 
     .collapsible:hover {
@@ -94,20 +229,20 @@ Ill use the old website layout to remake the current unicode guide but with bett
 
 
     .content::-webkit-scrollbar {
-      width: 12px; 
+      width: 12px;
     }
 
     .content::-webkit-scrollbar-track {
-      background: #c2c2c2; 
+      background: #c2c2c2;
     }
 
     .content::-webkit-scrollbar-thumb {
-      background: #888; 
-      border-radius: 10px; 
+      background: #888;
+      border-radius: 10px;
     }
 
     .content::-webkit-scrollbar-thumb:hover {
-      background: #555; 
+      background: #555;
     }
 
     .content ul {
@@ -147,63 +282,94 @@ Ill use the old website layout to remake the current unicode guide but with bett
       border-radius: 5px;
       font-family: 'Cabin', sans-serif;
     }
+
     /*universal table style*/
 
     table {
-          color: #222;
-          padding: 5px;
-          border: 1px solid #ddd;
-          border-collapse: separate; /* Change from collapse to separate */
-          border-radius: 10px; /* Add border-radius to the table */
-          font-size: 1rem;
-          width: 100%;
-          table-layout: auto;
-          min-width: 600px;
-          overflow: hidden; /* Add overflow hidden to ensure rounded corners are applied */
-       }
+      color: #222;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-collapse: separate;
+      /* Change from collapse to separate */
+      border-radius: 10px;
+      /* Add border-radius to the table */
+      font-size: 1rem;
+      width: 100%;
+      table-layout: auto;
+      min-width: 600px;
+      overflow: hidden;
+      /* Add overflow hidden to ensure rounded corners are applied */
+    }
 
-       th, td {
-          border-bottom: 1px solid #ddd;
-          padding: 10px; 
-          word-wrap: break-word;
-          text-align: center;
-       }
-        }
+    th,
+    td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      word-wrap: break-word;
+      text-align: center;
+    }
 
-        th {
-          background-color: #007bff;
-          color: #fff;
-        }
-        @media (max-width: 600px) {
-          .seller-list {
-            padding: 10px;
-          }
 
-          table {
-            font-size: 0.9rem;
-          }
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
 
-          th, td {
-            padding: 10px;
-          }
-        }
+    @media (max-width: 600px) {
+      .seller-list {
+        padding: 10px;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      th,
+      td {
+        padding: 10px;
+      }
+    }
 
     img.tutorial {
       width: 30%;
       height: auto;
     }
-
   </style>
 </head>
 
 <body>
-  <b><h1 class="title">CraftersMC Guides</h1></b>
+
+  <div id="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+    <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+    <img src="cmc-guides.png" alt="CMC Guides Logo">
+    <hr>
+    <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+    <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+    <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+    <a href="https://craftersmc.net/">CraftersMC Website</a>
+  </div>
+
+  <b>
+    <h1 class="title">CraftersMC Guides</h1>
+  </b>
 
   <div class="doc-container">
     <!-- Starter Guide -->
     <button class="collapsible">Starter Guide</button>
     <div class="content">
-      
+
     </div>
 
     <div class="section-separator"></div>
@@ -211,9 +377,12 @@ Ill use the old website layout to remake the current unicode guide but with bett
     <!-- Intermediate Guide -->
     <button class="collapsible">About This guide</button>
     <div class="content">
-      Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. Here is an in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the Unicode.
+      Many players have been asking how to get some of the custom emojis also known as Unicode or glyphs. Here is an
+      in-depth guide on how to obtain and use these awesome characters. Use this website as your atlas to find the
+      Unicode.
 
-      Below is a chart of the current locations of the in-game Unicode. Once you have found the Unicode you would like to use, copy and paste it into your Book and Quill.
+      Below is a chart of the current locations of the in-game Unicode. Once you have found the Unicode you would like
+      to use, copy and paste it into your Book and Quill.
 
 
     </div>
@@ -225,7 +394,8 @@ Ill use the old website layout to remake the current unicode guide but with bett
     <div class="content">
       <ul>
         <li>🙂 Unicode Between: E100-E1FF are emojis, statistic, and various glyphs.</li>
-        <li>📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience bars.</li>
+        <li>📶 Unicode Between: E200-E2FF are health bars, mana bars, orange bars, purple bars and slayer experience
+          bars.</li>
         <li>🌳 Unicode Between: E300-E320 are zone icons on the scoreboard.</li>
         <li>🌐 Unicode Between: E400-E4FF are English ranks, rarities, and item badges.</li>
         <li>🇹🇷 Unicode Between: E500-E5FF are Turkish ranks, rarities, and item badges.</li>
@@ -234,25 +404,26 @@ Ill use the old website layout to remake the current unicode guide but with bett
         <li>🩶 Unicode Between: E700-E730 are gray bars.</li>
         <li>🇫🇷 Unicode Between: E800-E8FF are French ranks, rarities, and item badges.</li>
         <li>🇩🇪 Unicode Between: E900-E9FF are German ranks, rarities, and item badges.</li>
-      </ul> 
+      </ul>
     </div>
 
     <div class="section-separator"></div>
 
     <!-- Advanced Guide -->
     <button class="collapsible">How to use Unicode Explorer</button>
-    <div class="content"><p>Open the Unicode Explorer from the button above. You will see plenty of Unicode values.<br><br>
-      
-    Scroll to find values ranging from E000 to EFFF. Click the value you want to copy.<br><br>
-      
-    Click copy on the value page. It should say "Copied to clipboard".<br><br>
-      
-    Open Minecraft, join CraftersMC, and paste the Unicode value into your Book and Quill.</p>
-    <img class="tutorial" src="UnicodeTutorial1.png">
+    <div class="content">
+      <p>Open the Unicode Explorer from the button above. You will see plenty of Unicode values.<br><br>
+
+        Scroll to find values ranging from E000 to EFFF. Click the value you want to copy.<br><br>
+
+        Click copy on the value page. It should say "Copied to clipboard".<br><br>
+
+        Open Minecraft, join CraftersMC, and paste the Unicode value into your Book and Quill.</p>
+      <img class="tutorial" src="UnicodeTutorial1.png">
       <img class="tutorial" src="UnicodeTutorial2.jpeg">
       <img class="tutorial" src="UnicodeTutorial3.png">
       <img class="tutorial" src="UnicodeTutorial4.png">
-      
+
     </div>
 
     <div class="section-separator"></div>
@@ -260,7 +431,8 @@ Ill use the old website layout to remake the current unicode guide but with bett
     <button class="collapsible">Irrld's Glyph site</button>
     <div class="content">
       <a class="button" href="https://irrl.dev/glyph">Irrl's Glyph</a>
-      <p>Click the button above to access glyphs for copying. After loading, click on the glyph you want, and it will be copied to your clipboard. Paste it in your Book and Quill in CraftersMC.</p>
+      <p>Click the button above to access glyphs for copying. After loading, click on the glyph you want, and it will be
+        copied to your clipboard. Paste it in your Book and Quill in CraftersMC.</p>
 
     </div>
 
@@ -268,8 +440,12 @@ Ill use the old website layout to remake the current unicode guide but with bett
 
     <!-- Best Reforges for Accessories -->
     <button class="collapsible">Notes</button>
-    <div class="content"><p>Not all Unicode values will work. E400-407 are store ranks, whereas E420-425 are staff ranks. If nothing appears, try a different value.</p>
-    <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a Unicode value using the websites given above.</b></div>
+    <div class="content">
+      <p>Not all Unicode values will work. E400-407 are store ranks, whereas E420-425 are staff ranks. If nothing
+        appears, try a different value.</p>
+      <b style="color:Red;">Pasting "E400" etc will NOT WORK. You MUST copy a Unicode value using the websites given
+        above.</b>
+    </div>
 
     <div class="section-separator"></div>
 
@@ -280,7 +456,7 @@ Ill use the old website layout to remake the current unicode guide but with bett
     <div class="section-separator"></div>
     <!-- Queries -->
     <button class="collapsible">Queries</button>
-  <div class="content"></div>
+    <div class="content"></div>
     <!-- Credits Section -->
     <div class="credits" style="background-color: #C5C6C7; padding: 20px; margin-top: 20px; text-align: center;">
       <h2>Credits</h2>
@@ -290,7 +466,8 @@ Ill use the old website layout to remake the current unicode guide but with bett
       <p><strong>Advisor:</strong> AakashGupta (Discord Username — aakashgupta12)</p>
     </div>
     <center>
-      <a class="button" href="https://github.com/CraftersMC-Guides-Project/CraftersMC-Guides-Project.github.io" target="_blank">Repository</a>
+      <a class="button" href="https://github.com/CraftersMC-Guides-Project/CraftersMC-Guides-Project.github.io"
+        target="_blank">Repository</a>
       <a class="button" href="https://discord.gg/Ydbee3NygZ" target="_blank">Discord</a>
       <a class="button" href="https://craftersmc.wiki.gg/" target="_blank">CraftersMC Wiki</a>
       <a class="button" href="https://craftersmc.net" target="_blank">CraftersMC Website</a>
@@ -301,23 +478,32 @@ Ill use the old website layout to remake the current unicode guide but with bett
       <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
     </footer>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          var coll = document.getElementsByClassName("collapsible");
-          var i;
-          for (i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function() {
-                  this.classList.toggle("active");
-                  var content = this.nextElementSibling;
-                  if (content.classList.contains("open")) {
-                      content.classList.remove("open");
-                  } else {
-                      content.classList.add("open");
-                  }
-              });
-          }
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#loader').style.display = 'none';
+      });
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("open");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.classList.contains("open")) {
+              content.classList.remove("open");
+            } else {
+              content.classList.add("open");
+            }
+          });
+        }
       });
 
     </script>
 </body>
 
-                                                                              </html>
+</html>
