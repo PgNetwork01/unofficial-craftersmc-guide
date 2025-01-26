@@ -173,17 +173,21 @@ function calculateInterestTimes() {
 
 function displayNextInterest() {
     const interestTimes = calculateInterestTimes();
-    const nextInterest = interestTimes[0];
-    const lastInterest = new Date(initialTargetTime - (31 * 60 * 60 * 1000));
+    const nextInterest = interestTimes[1];
     document.getElementById("nextInterestTime").textContent = nextInterest;
-    document.getElementById("lastInterestTime").textContent = formatTime(lastInterest);
+}
+
+function displayLastInterest() {
+    const interestTimes = calculateInterestTimes();
+    const lastInterest = interestTimes[0];
+    document.getElementById("lastInterestTime").textContent = lastInterest;
 }
 
 function displayInterests() {
     const interestContainer = document.getElementById("interestContainer");
     const interests = calculateInterestTimes();
-
-    for (let i = 0; i < 10; i++) {
+    interestContainer.innerHTML = "";
+    for (let i = 1; i < 11; i++) {
         const div = document.createElement("div");
         div.classList.add("interest-item");
         div.textContent = interests[i];
@@ -206,8 +210,34 @@ function toggleInterestContainer() {
 }
 
 function updateNextInterestTime() {
-    targetTime += 31 * 60 * 60 * 1000;  
-    displayNextInterest();
+    const interestTimes = calculateInterestTimes();
+    const lastInterest = interestTimes[0];
+    const nextInterest = interestTimes[1];
+
+    document.getElementById("lastInterestTime").textContent = lastInterest;
+    document.getElementById("nextInterestTime").textContent = nextInterest;
+
+    displayInterests();
+}
+
+function updateProgressBarAndTimer() {
+    const now = new Date().getTime();
+    const elapsedTime = now - targetTime;
+
+    if (elapsedTime >= 31 * 60 * 60 * 1000) {
+        targetTime += 31 * 60 * 60 * 1000;
+        updateNextInterestTime();
+    }
+
+    const remainingTime = 31 * 60 * 60 * 1000 - elapsedTime;
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+
+    const percentage = (elapsedTime / (31 * 60 * 60 * 1000)) * 100;
+    document.getElementById("progressBar").style.width = percentage + "%";
 }
 
 const timerInterval = setInterval(function() {
@@ -215,9 +245,7 @@ const timerInterval = setInterval(function() {
     const remainingTime = targetTime - now;
 
     if (remainingTime <= 0) {
-        clearInterval(timerInterval);
-        document.getElementById("timer").innerHTML = "Interest is available now!";
-        document.getElementById("progressBar").style.width = "100%";
+        targetTime += 31 * 60 * 60 * 1000;
         updateNextInterestTime();
     } else {
         const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
@@ -227,13 +255,14 @@ const timerInterval = setInterval(function() {
 
         document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-        const totalTime = initialTargetTime + 31 * 60 * 60 * 1000 - initialTargetTime;
+        const totalTime = 31 * 60 * 60 * 1000;
         const percentage = (remainingTime / totalTime) * 100;
         document.getElementById("progressBar").style.width = percentage + "%";
     }
 }, 1000);
 
 displayNextInterest();
+displayLastInterest();
 displayInterests();
 </script>
 
