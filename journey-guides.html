@@ -17,6 +17,7 @@
             background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
             background-size: cover;
             background-repeat: no-repeat;
+            -webkit-tap-highlight-color: transparent;
         }
 
         #loader {
@@ -49,13 +50,9 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            80%,
-            100% {
+            0%, 80%, 100% {
                 transform: scale(0);
             }
-
             40% {
                 transform: scale(1);
             }
@@ -67,18 +64,12 @@
 
         span.no_selection {
             user-select: none;
-            /* standard syntax */
             -webkit-user-select: none;
-            /* webkit (safari, chrome) browsers */
             -moz-user-select: none;
-            /* mozilla browsers */
             -khtml-user-select: none;
-            /* webkit (konqueror) browsers */
             -ms-user-select: none;
-            /* IE10+ */
         }
 
-        /* Navbar styles */
         .navbar {
             background: #007bff;
             color: white;
@@ -90,14 +81,24 @@
             top: 0;
             width: 100%;
             z-index: 10;
+            box-sizing: border-box;
+            height: 60px;
         }
 
-        .navbar .menu-icon {
-            font-size: 1.5rem;
+        .menu-icon,
+        .material-icons {
+            font-size: 2.5rem;
+            padding: 5px;
             cursor: pointer;
         }
 
-        /* Sidebar styles */
+        .navbar a img {
+            height: 50px;
+            margin-right: 10px;
+            max-width: calc(100% - 20px);
+            object-fit: contain;
+        }
+
         .sidebar {
             position: fixed;
             top: 0;
@@ -174,6 +175,11 @@
 
         .top-button:hover {
             background-color: #0056b3;
+        }
+
+        .home-icon {
+            font-size: 2.5rem;
+            cursor: pointer;
         }
 
         .card-container {
@@ -283,13 +289,14 @@
         <div></div>
         <div></div>
     </div>
-    <!-- Top Navbar -->
     <div class="navbar">
-        <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
-        <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+        <div>
+            <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+            <span class="material-icons" onclick="location.href='https://craftersmc-guides-project.github.io/home.html';">home</span>
+        </div>
+        <a href="index.html"><img src="cmc-guides.png" alt="CMC Guides Logo"></a>
     </div>
 
-    <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
         <img src="cmc-guides.png" alt="CMC Guides Logo">
@@ -301,9 +308,7 @@
     </div>
 
     <div class="top-button-container">
-        <a href="https://craftersmc-guides-project.github.io/home.html">
-            <button class="top-button">Go back to Homepage</button>
-        </a>
+        <span class="material-icons" onclick="location.href='https://craftersmc-guides-project.github.io/home.html';" style="cursor: pointer;">home</span>
     </div>
     <div class="card-container">
         <div class="card">
@@ -374,5 +379,4 @@
         }
     </script>
 </body>
-
 </html>
