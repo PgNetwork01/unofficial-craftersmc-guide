@@ -18,16 +18,17 @@
     <div class="navbar">
         <div>
             <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
-            <span class="material-icons" onclick="location.href='https://craftersmc-guides-project.github.io/home.html';">home</span>
+            <span class="material-icons"
+                onclick="location.href='https://craftersmc-guides-project.github.io/home.html';">home</span>
         </div>
         <a href="index.html">
-  <img src="cmc-guides.png" alt="CMC Guides Logo" style="width: 55px; height: 55px;">
+            <img src="assests/cmc-guides.png" alt="CMC Guides Logo" style="width: 55px; height: 55px;">
         </a>
     </div>
 
     <div class="sidebar" id="sidebar">
         <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
-        <img src="cmc-guides.png" alt="CMC Guides Logo">
+        <img src="assests/cmc-guides.png" alt="CMC Guides Logo">
         <hr>
         <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
         <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
@@ -36,7 +37,8 @@
     </div>
 
     <div class="top-button-container">
-        <span class="material-icons" onclick="location.href='https://craftersmc-guides-project.github.io/home.html';" style="cursor: pointer;">home</span>
+        <span class="material-icons" onclick="location.href='https://craftersmc-guides-project.github.io/home.html';"
+            style="cursor: pointer;">home</span>
     </div>
     <div class="card-container">
         <div class="card">
@@ -96,15 +98,6 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('#loader').style.display = 'none';
-        });
-
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("open");
-        }
-    </script>
 </body>
+
 </html>

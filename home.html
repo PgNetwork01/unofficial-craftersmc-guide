@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/essential.css">
     <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -20,13 +21,13 @@
     <!-- Top Navbar -->
     <div class="navbar">
         <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
-        <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+        <a href="index.html"><img src="assests/cmc-guides.png" style="height: 40px;"></a>
     </div>
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
-        <img src="cmc-guides.png" alt="CMC Guides Logo">
+        <img src="assests/cmc-guides.png" alt="CMC Guides Logo">
         <hr>
         <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
         <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
@@ -119,27 +120,6 @@
         &copy; 2025 Guides by TGJASSIYT, ieduoo, TechonTheDev, Aakash Gupta and PGNetwork<br>
         <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('#loader').style.display = 'none';
-        });
-
-        function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("open");
-        }
-
-        function clearSelection() {
-            if (document.selection && document.selection.empty) {
-                document.selection.empty();
-            } else if (window.getSelection) {
-                var sel = window.getSelection();
-                sel.removeAllRanges();
-            }
-        }
-
-    </script>
 </body>
 
 </html>

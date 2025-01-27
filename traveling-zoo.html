@@ -1,260 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traveling Zoo Countdown</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="js/script.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background: url("Backgrounds/image8298.png") no-repeat center center fixed;
-            background-size: cover;
-            background-position-x: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #007bff;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-        .progress {
-            height: 30px;
-            margin-bottom: 20px;
-        }
-        .progress-bar {
-            transition: width 1s ease;
-        }
-        .timer {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-        }
-        .divider {
-            margin: 30px 0;
-            border-top: 1px solid #ddd;
-        }
-        .row {
-            margin-top: 20px;
-        }
-        .event-list {
-            margin-top: 20px;
-            text-align: left;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .event-item {
-            padding: 5px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        #nextEventBtn {
-            font-style: italic;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            font-size: 1.1rem;
-        }
-        #nextEventBtn:hover {
-            background-color: #0056b3;
-        }
-        .collapsible {
-            background-color: #007bff;
-            color: white;
-            padding: 15px 20px;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-        .collapsible:hover {
-            background-color: #0056b3;
-        }
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .event-container {
-            margin-bottom: 20px;
-        }
-        .event-list-container {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/traveling-zoo.css">
+    <link rel="stylesheet" href="css/essential.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/traveling-zoo.js"></script>
+
 </head>
+
 <body>
-
-<div class="container">
-    <h1>Traveling Zoo Countdown</h1>
-    <p>The Traveling Zoo event comes every 2 days 14 hours from the last event, the next one starting in...</p>
-
-    <div class="progress">
-        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- Top Navbar -->
+    <div class="navbar">
+        <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+        <a href="index.html"><img src="assests/cmc-guides.png" style="height: 40px;"></a>
     </div>
 
-    <p id="timer" class="timer"></p>
-
-    <div class="row">
-        <div class="col-6">
-            <h4>Last Event</h4>
-            <p id="lastEventTime"></p>
-        </div>
-        <div class="col-6">
-            <h4>Next Event</h4>
-            <p id="nextEventTime"></p>
-        </div>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+        <img src="assests/cmc-guides.png" alt="CMC Guides Logo">
+        <hr>
+        <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+        <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+        <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+        <a href="https://craftersmc.net/">CraftersMC Website</a>
     </div>
 
-    <div class="divider"></div>
+    <div class="container">
+        <h1>Traveling Zoo Countdown</h1>
+        <p>The Traveling Zoo event comes every 2 days 14 hours from the last event, the next one starting in...</p>
 
-    <div class="event-container">
-        <button class="collapsible" onclick="toggleEventContainer()">Next Events (Click to Expand)</button>
-        <div class="content">
-            <div class="event-list-container" id="eventContainer"></div>
+        <div class="progress">
+            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
+
+        <p id="timer" class="timer"></p>
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Last Event</h4>
+                <p id="lastEventTime"></p>
+            </div>
+            <div class="col-6">
+                <h4>Next Event</h4>
+                <p id="nextEventTime"></p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="event-container">
+            <button class="collapsible" onclick="toggleEventContainer()">Next Events (Click to Expand)</button>
+            <div class="content">
+                <div class="event-list-container" id="eventContainer"></div>
+            </div>
+        </div>
+
     </div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-<script>
-const initialTargetTime = new Date('2025-01-27T14:30:00+05:30').getTime();
-let targetTime = initialTargetTime;
-const eventDuration = 60 * 60 * 1000;
-const intervalDuration = (2 * 24 + 14) * 60 * 60 * 1000;
-const eventAlertMessage = `
-🦁 Did you know? 🦁 The Creedon NPC is there with his random pets near the spawn inside the event stand area. Go online to buy those pets! 🐾
-`;
-
-function formatTime(date) {
-    const options = { 
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit', 
-        minute: '2-digit', 
-        hour12: true 
-    };
-    return date.toLocaleString('en-IN', options).replace(':00', '').trim();
-}
-
-function calculateEventTimes() {
-    const eventTimes = [];
-    for (let i = 0; i < 50; i++) {
-        const nextEventDate = new Date(initialTargetTime + (i * intervalDuration));
-        eventTimes.push(formatTime(nextEventDate));
-    }
-    return eventTimes;
-}
-
-function displayNextEvent() {
-    const eventTimes = calculateEventTimes();
-    const nextEvent = eventTimes[0];
-    const lastEvent = new Date(initialTargetTime - intervalDuration);
-    document.getElementById("nextEventTime").textContent = nextEvent;
-    document.getElementById("lastEventTime").textContent = formatTime(lastEvent);
-}
-
-function displayEvents() {
-    const eventContainer = document.getElementById("eventContainer");
-    const events = calculateEventTimes();
-
-    for (let i = 0; i < 10; i++) {
-        const div = document.createElement("div");
-        div.classList.add("event-item");
-        div.textContent = events[i];
-        eventContainer.appendChild(div);
-    }
-}
-
-function toggleEventContainer() {
-    const content = document.querySelector(".content");
-    content.classList.toggle("show");
-
-    const collapsible = document.querySelector(".collapsible");
-    if (content.classList.contains("show")) {
-        collapsible.innerHTML = "Next Events (Click to Collapse)";
-        content.style.display = "block";
-    } else {
-        collapsible.innerHTML = "Next Events (Click to Expand)";
-        content.style.display = "none";
-    }
-}
-
-function updateNextEventTime() {
-    targetTime += intervalDuration;  
-    displayNextEvent();
-}
-
-function showEventAlert() {
-    const now = new Date().getTime();
-    const eventStartTime = targetTime;
-    const eventEndTime = targetTime + eventDuration;
-
-    if (now >= eventStartTime && now <= eventEndTime) {
-        alert(eventAlertMessage);
-    }
-}
-
-const timerInterval = setInterval(function() {
-    const now = new Date().getTime();
-    const remainingTime = targetTime - now;
-
-    if (remainingTime <= 0) {
-        clearInterval(timerInterval);
-        document.getElementById("timer").innerHTML = "Event is available now!";
-        document.getElementById("progressBar").style.width = "100%";
-        updateNextEventTime();
-    } else {
-        const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-        const totalTime = intervalDuration - initialTargetTime + targetTime;
-        const percentage = (remainingTime / totalTime) * 100;
-        document.getElementById("progressBar").style.width = percentage + "%";
-        
-        showEventAlert();
-    }
-}, 1000);
-
-displayNextEvent();
-displayEvents();
-</script>
 
 </body>
+
 </html>
