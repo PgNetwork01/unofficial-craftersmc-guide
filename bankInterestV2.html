@@ -5,110 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Interest Countdown</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background: url("Backgrounds/image8298.png") no-repeat center center fixed;
-            background-size: cover;
-            background-position-x: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #007bff;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-        }
-        .progress {
-            height: 30px;
-            margin-bottom: 20px;
-        }
-        .progress-bar {
-            transition: width 1s ease;
-        }
-        .timer {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-        }
-        .divider {
-            margin: 30px 0;
-            border-top: 1px solid #ddd;
-        }
-        .row {
-            margin-top: 20px;
-        }
-        .interest-list {
-            margin-top: 20px;
-            text-align: left;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-        .interest-item {
-            padding: 5px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        #nextInterestBtn {
-            font-style: italic;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            font-size: 1.1rem;
-        }
-        #nextInterestBtn:hover {
-            background-color: #0056b3;
-        }
-        .collapsible {
-            background-color: #007bff;
-            color: white;
-            padding: 15px 20px;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-        .collapsible:hover {
-            background-color: #0056b3;
-        }
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .interest-container {
-            margin-bottom: 20px;
-        }
-        .interest-list-container {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            margin-top: 10px;
-        }
-    </style>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/bank-interest-v2.css">
+    <link rel="stylesheet" href="css/essential.css">
 </head>
 <body>
+    <div id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- Top Navbar -->
+      <div class="navbar">
+        <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+        <a href="index.html"><img src="cmc-guides.png" style="height: 40px;"></a>
+      </div>
+    
+      <!-- Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+        <img src="cmc-guides.png" alt="CMC Guides Logo">
+        <hr>
+        <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+        <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+        <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+        <a href="https://craftersmc.net/">CraftersMC Website</a>
+      </div>
 
 <div class="container">
     <h1>Bank Interest Countdown</h1>
