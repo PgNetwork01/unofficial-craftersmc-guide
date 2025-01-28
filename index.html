@@ -1,86 +1,125 @@
-<!--
-This repository is under the GNU GPL 3.0 license. You may read the license for this work in license.md. This work may not be taken and used without proper credibility to the owners. This can be legally enforced.
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <style>
-    img.nav {
-      height: 50px;
-      width: auto;
-    }
-  </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CraftersMC Guides</title>
-  <a id="top"></a>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="js/script.js"></script>
-  <script src="js/index.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="assests/favicon.ico">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafting Design</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/essential.css">
+    <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="home.html"><img class="nav" src="assests/cmc-guides.png"/></a>
-      <a href="https://craftersmc.net">CraftersMC official</a>
-      <a href="rank-sellers.html">Rank sellers</a>
-      <a href="unicode.html">Unicode guide</a>
-      <a href="#">Event Logs</a>
-      <a href="home.html">Home</a>
-    </nav>
-  </header>
-  <b>
-    <h1 class="title">Maintenance</h1>
-  </b>
-  <section>
-    <p>The guides is under maintenance
-    <br><br>
-    We hope to have it back up soon.
-    </p>
-    <h3>Whats new?</h3>
-    <p>
-      <ul>
-        <li>New UI
-          <ul>
-            <li>Redoing the UI AGAIN</li>
-            <li>This new UI won't be perfect. But soon we can hopefully make this new UI work well and suite the theme of the website.</li>
-          </ul>
-        </li>
-        <li>Bug fixes (of course)</li>
-        <li>Home screen preparation again</li>
-      </ul>
-    </p>
-  </section>
-    <footer>
-    <div class="footer">
-      <ul>
-        <li><h3>Credits</h3></li>
-        <li><strong>Coder:</strong> Pg Network (Discord Username - pgnetwork01)</li>
-        <li><strong>Coder:</strong> TGJASSIYT (Discord Username — jassi_xc)</li>
-        <li><strong>Coder:</strong> TechonTheDev (Discord Username — techonthedev)</li>
-        <li><strong>Writer:</strong> ieduoo (Discord Username — ieduoo)</li>
-        <li><strong>Advisor:</strong> AakashGupta (Discord Username — aakashgupta12)</li>
-      </ul>
-      <ul>
-        <li><h3>Links</h3></li>
-        <li><a class="links" href="https://github.com/CraftersMC-Guides-Project/CraftersMC-Guides-Project.github.io"
-          target="_blank">Repository</a></li>
-        <li><a class="links" href="https://discord.gg/Ydbee3NygZ" target="_blank">Discord</a></li>
-        <li><a class="links" href="https://craftersmc.wiki.gg/" target="_blank">CraftersMC Wiki</a></li>
-        <li><a class="links" href="https://craftersmc.net" target="_blank">CraftersMC Website</a></li>
-        <li><a class="links" href="rank-sellers.html">Rank Sellers (beta)</a></li>
-      </ul>
+    <div id="loader">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-    <hr color="#222">
-    &copy; 2025 Guides by TGJASSIYT, ieduoo, TechonTheDev, Aakash Gupta, PGNetwork<br>
-    <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
-  </footer>
+    <!-- Top Navbar -->
+    <div class="navbar">
+        <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+        <a href="index.html"><img src="assets/cmc-guides.png" style="height: 40px;"></a>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+        <img src="assets/cmc-guides.png" alt="CMC Guides Logo">
+        <hr>
+        <a href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+        <a href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+        <a href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+        <a href="https://craftersmc.net/">CraftersMC Website</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>CraftersMC Guides</h1>
+        <p>Just like a captain needs a map to navigate the seas, mastering SkyBlock in CraftersMC requires a guide and
+            the right tools to succeed</p>
+        <a class="cta-btn" href="journey-guides.html">GET STARTED</a>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="journey-guides.html" class="nav-item">
+            <span class="material-icons">play_arrow</span>
+            <small>Guides</small>
+        </a>
+        <a href="rank-sellers.html" class="nav-item">
+            <span class="material-icons">info</span>
+            <small>Rank Sellers</small>
+        </a>
+        <a href="unicode.html" class="nav-item">
+            <span class="material-icons">shopping_bag</span>
+            <small>Unicode Guide</small>
+        </a>
+        <a href="index.html" class="nav-item">
+            <span class="material-icons">settings</span>
+            <small>Event Log</small>
+        </a>
+        <a href="https://craftersmc.wiki.gg/wiki/CraftersMC_SkyBlock_Wiki" class="nav-item">
+            <span class="material-icons">public</span>
+            <small>Wiki</small>
+        </a>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="journey-guides.html">
+        <div class="card">
+            <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
+            <div class="card-content">
+                <h3>The guides</h3>
+                <p>Learn to progress</p>
+                <button>Read The Guides</button>
+            </div>
+        </div>
+
+            <a class="card" href="rank-sellers.html">
+            <img src="Backgrounds/IMG_4500.jpeg" alt="Card Image">
+            <div class="card-content">
+                <h3>Rank sellers</h3>
+                <p>See the trusted rank sellers in CraftersMC</p>
+                <button>Discover</button>
+            </div>
+        </a>
+
+        <a class="card" href="unicode.html">
+            <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
+            <div class="card-content">
+                <h3>Unicode Guide</h3>
+                <p>Learn to use Unicode in CraftersMC</p>
+                <button>Learn More</button>
+            </div>
+        </a>
+
+            <a class="card" href="#">
+            <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
+            <div class="card-content">
+                <h3>Event Logs</h3>
+                <p>Find out about the next events</p>
+                <button>Check out</button>
+            </div>
+        </a>
+
+        <a class="card" href="https://peawies.github.io/CraftersMC-Calculators/">
+            <img src="Backgrounds/IMG_4501.gif" alt="Card Image">
+            <div class="card-content">
+               <h3>Calculators</h3>
+                <p>Check out the calculators site by Peawies!</p>
+                <button>Visit</button>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Guides by TGJASSIYT, ieduoo, TechonTheDev, Aakash Gupta and PGNetwork<br>
+        <b>CraftersMC Guides is a community project and is not endorsed with Teon Creative, Mojang or Microsoft</b>
+    </footer>
 </body>
 
 </html>
