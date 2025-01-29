@@ -1,3 +1,13 @@
+:root {
+    --guides-blue: #007bff;
+    --white: #ffffff;
+    --guides-blue-hover: #0056b3;
+    --background: #f4f4f4;
+    --sidebar-text: #2f2f2f;
+    --title-shadow: #e7eae5;
+  
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,34 +16,34 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background-color: #ffffff; /* Changed to white */
+  background-color: var(--white); 
   align-items: center;
   display: flex;
   flex-direction: column;
-  color: #007bff; /* Changed text color to blue */
+  color: var(--guides-blue); /* Changed text color to blue */
 }
 
 .title {
   text-align: center;
   font-weight: 950;
-  color: #007bff; /* Changed to blue */
+  color: var(--guides-blue); /* Changed to blue */
   margin-bottom: 20px;
-  text-shadow: 2px 2px #e7eae5;
+  text-shadow: 2px 2px var(--title-shadow);
   
 }
 
 .doc-container {
   max-width: 800px;
   margin: 0 auto;
-  background: #ffffff; /* Changed to white */
+  background: var(--white); /* Changed to white */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
 }
 
 .collapsible {
-  background-color: #007bff; /* Changed to blue */
-  color: white;
+  background-color: var(--guides-blue); /* Changed to blue */
+  color: var(--white);
   cursor: pointer;
   padding: 16px;
   width: 100%;
@@ -48,7 +58,7 @@ body {
 }
 
 .collapsible:hover {
-  background-color: #0056b3;
+  background-color: var(--guides-blue-hover);
 }
 
 .collapsible::after {
@@ -66,13 +76,13 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background-color: #ffffff; /* Changed to white */
+  background-color: var(--white); /* Changed to white */
   padding: 0 10px;
 }
 
 .content p {
   margin: 10px 0;
-  color: #007bff;
+  color: var(--guides-blue);
 }
 
 .content.open {
@@ -89,12 +99,12 @@ body {
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: #007bff;
+  background: var(--guides-blue);
   border-radius: 10px;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
-  background: #0056b3;
+  background: var(--guides-blue-hover);
 }
 
 .content ul {
@@ -111,8 +121,8 @@ footer {
   padding: 10px;
   text-align: center;
   font-size: 14px;
-  color: #007bff;
-  background: #ffffff;
+  color: var(--guides-blue);
+  background: var(--white);
   width: 100%;
 }
 
@@ -129,15 +139,15 @@ footer {
 }
 
 footer b {
-  color: #007bff;
+  color: var(--guides-blue);
 }
 
 .credits {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 20px;
   margin-top: 20px;
   text-align: center;
-  color: #007bff;
+  color: var(--white);
 }
 
 .credits p {
@@ -148,16 +158,16 @@ a.button {
   display: inline-block;
   padding: 10px;
   margin: 5px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--guides-blue);
+  color: var(--white);
   text-decoration: none;
   border-radius: 5px;
 }
 
 table {
-  color: #007bff;
+  color: var(--guides-blue);
   padding: 5px;
-  border: 1px solid #007bff;
+  border: 1px solid var(--guides-blue);
   border-collapse: separate;
   border-radius: 10px;
   font-size: 1rem;
@@ -165,19 +175,19 @@ table {
   table-layout: auto;
   min-width: 600px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 th,
 td {
-  border-bottom: 1px solid #007bff;
+  border-bottom: 1px solid var(--guides-blue);
   padding: 10px;
   text-align: center;
 }
 
 th {
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: var(--guides-blue);
+  color: var(--white);
 }
 
 @media (max-width: 600px) {
@@ -196,23 +206,23 @@ th {
 }
 
 section {
-  background-color: #ffffff;
+  background-color: var(--white);
   width: 70%;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  color: #007bff;
+  color: var(--guides-blue);
   padding: 40px;
   margin: 20px 0px;
 }
 
 section a {
-  color: #0056b3;
+  color: var(--guides-blue-hover);
   text-decoration: none;
 }
 
 header {
-  background-color: #0056b3;
-  color: #ffffff;
+  background-color: var(--guides-blue-hover);
+  color: var(--white);
   width: 100%;
   padding: 15px;
   position: sticky;
@@ -221,7 +231,7 @@ header {
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   transition: 0.2s;
   font-size: small;
@@ -240,6 +250,6 @@ nav {
 }
 
 .links {
-  color: #007bff;
+  color: var(--guides-blue);
   text-decoration: none;
   }

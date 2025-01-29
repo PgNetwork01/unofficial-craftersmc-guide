@@ -25,7 +25,6 @@ body {
     align-items: center;
     text-align: center;
     color: white;
-    box-shadow: inset 0px 0px 100000px 100px #000;
     margin-top: 56px;
     padding: 20px;
     height: calc(100vh - 56px);
