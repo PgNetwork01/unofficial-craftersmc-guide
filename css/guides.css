@@ -7,6 +7,12 @@
   --text-color: black;
   --selection-bg-color: black;
   --selection-text-color: white;
+  --dark-bg-color: #222222;
+  --dark-text-color: white;
+  --card-dark-bg-color: #2f2f2f;
+  --primary-color-dark: #444444;
+  --dark-selection-text-color: black;
+  --dark-selection-bg-color: white;
 }
 
 body {
@@ -19,9 +25,30 @@ body {
   align-items: center;
   min-height: 100vh;
   box-sizing: border-box;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
   flex-direction: column;
 }
+
+body.dark-mode {
+  background-color: var(--dark-bg-color);
+}
+
+button.toggle-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button.toggle-button.dark-mode {
+  background-color: var(--primary-color-dark);
+  color: white;
+}
+
+
 
 button.nav-btn {
   color: white;
@@ -29,6 +56,10 @@ button.nav-btn {
   background-color: var(--primary-color);
   padding: 10px 15px;
   border-radius: 5px;
+}
+
+button.nav-btn.dark-mode {
+  background-color: var(--primary-color-dark);
 }
 
 .btn-nav {
@@ -54,6 +85,10 @@ button.nav-btn {
   cursor: pointer;
 }
 
+button.nav-btn.dark-mode {
+  background-color: var(--primary-color-dark);
+}
+
 .card {
   background-color: var(--card-bg-color);
   border-radius: 15px;
@@ -65,9 +100,17 @@ button.nav-btn {
   box-sizing: border-box;
 }
 
+.card.dark-mode {
+  background-color: var(--card-dark-bg-color);
+}
+
 h3 {
   color: var(--text-color);
   margin-top: 0;
+}
+
+h3.dark-mode {
+  color: var(--dark-text-color)
 }
 
 ul {
@@ -76,14 +119,24 @@ ul {
   color: var(--text-color);
 }
 
+ul.dark-mode {
+  color: var(--dark-text-color);
+}
+
 ul ul {
   list-style-type: circle;
+}
+
+ul ul.dark-mode {
+  color: var(--dark-text-color)
 }
 
 a {
   color: var(--primary-color);
   text-decoration: none;
 }
+
+
 
 a:hover {
   text-decoration: underline;
@@ -94,11 +147,25 @@ strong {
   font-weight: bold;
 }
 
+strong {
+  color: var(--dark-text-color)
+}
+
 p {
   color: var(--text-color);
+}
+
+p {
+  color: var(--dark-text-color);
 }
 
 ::selection {
   background: var(--selection-bg-color);
   color: var(--selection-text-color);
 }
+
+::selection.dark-mode {
+  background: var(--dark-selection-bg-color);
+  color: var(--dark-selection-text-color);
+}
+

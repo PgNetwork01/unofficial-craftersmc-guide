@@ -7,4 +7,7 @@ document.getElementById('dark-mode-toggle').addEventListener('click', (event) =>
   button.classList.toggle('light-mode', !isDarkMode);
 
   document.querySelectorAll('body').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('button.toggle-button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+
+  document.querySelectorAll('').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
 });
