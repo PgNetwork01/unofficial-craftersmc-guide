@@ -1,0 +1,104 @@
+:root {
+  --main-bg-color: #f1f1f1;
+  --card-bg-color: white;
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #007bff;
+  --disabled-bg-color: rgb(0 0 0 / 29%);
+  --text-color: black;
+  --selection-bg-color: black;
+  --selection-text-color: white;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  flex-direction: column;
+}
+
+button.nav-btn {
+  color: white;
+  border: none;
+  background-color: var(--primary-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+button.nav-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--disabled-bg-color);
+}
+
+button.nav-btn {
+  color: white;
+  border: none;
+  background-color: var(--primary-color);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px var(--card-shadow-color);
+  padding: 20px 30px;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+h3 {
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--text-color);
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+p {
+  color: var(--text-color);
+}
+
+::selection {
+  background: var(--selection-bg-color);
+  color: var(--selection-text-color);
+}
