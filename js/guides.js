@@ -8,18 +8,11 @@ document.getElementById('dark-mode-toggle').addEventListener('click', (event) =>
 
   document.querySelectorAll('body').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
   document.querySelectorAll('button.toggle-button').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('.card').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('nav-btn').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('button.nav-btn').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('h3').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('ul').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('ul ul').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
-
   document.querySelectorAll('::selection').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
 });
