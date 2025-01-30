@@ -15,4 +15,6 @@ document.getElementById('dark-mode-toggle').addEventListener('click', (event) =>
   document.querySelectorAll('ul').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
   document.querySelectorAll('ul ul').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
   document.querySelectorAll('::selection').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('p').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
+  document.querySelectorAll('strong').forEach(el => el.classList.toggle('dark-mode', isDarkMode));
 });
