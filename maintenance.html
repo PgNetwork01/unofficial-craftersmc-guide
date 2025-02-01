@@ -26,14 +26,24 @@ This repository is under the GNU GPL 3.0 license. You may read the license for t
 
 <body>
   <header>
-    <nav>
-      <a href="home.html"><img class="nav" src="assets/cmc-guides.png"/></a>
-      <a href="https://craftersmc.net">CraftersMC official</a>
-      <a href="rank-sellers.html">Rank sellers</a>
-      <a href="unicode.html">Unicode guide</a>
-      <a href="#">Event Logs</a>
-      <a href="home.html">Home</a>
-    </nav>
+    <div class="navbar">
+      <span class="menu-icon material-icons" onclick="toggleSidebar()">menu</span>
+      <div class="right">
+          <span class="menu-icon material-icons" id="darkModeToggle">dark_mode</span>
+          <a href="home.html"><img src="assets/cmc-guides.png" style="height: 40px;"></a>
+      </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+      <span class="sidebar-close material-icons" onclick="toggleSidebar()">close</span>
+      <img src="assets/cmc-guides.png" alt="CMC Guides Logo">
+      <hr>
+      <a class="sidebar-link" href="https://craftersmc-guides-project.github.io/rank-sellers.html">Rank Sellers</a>
+      <a class="sidebar-link" href="https://craftersmc-guides-project.github.io/unicode.html">Unicode</a>
+      <a class="sidebar-link" href="https://craftersmc.wiki.gg/wiki/">CraftersMC Wiki</a>
+      <a class="sidebar-link" href="https://craftersmc.net/">CraftersMC Website</a>
+  </div>
   </header>
   <b>
     <h1 class="title">Maintenance</h1>

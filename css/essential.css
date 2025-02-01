@@ -53,6 +53,15 @@
     display: none;
 }
 
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    width: 105px;
+}
+
 span.no_selection {
     user-select: none;
     -webkit-user-select: none;
