@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomNavIcon.forEach(nav => nav.style.color = "#333333");
       ctaBtn.forEach(nav => nav.style.backgroundColor = "#007bff");
       nav.forEach(nav => nav.style.backgroundColor = "#007bff");
+      document.hero.classList.remove('darkmode')
       toggleButton.textContent = "dark_mode"; 
     } else {
       // Dark Mode
@@ -49,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomNavIcon.forEach(nav => nav.style.color = "white");
       ctaBtn.forEach(nav => nav.style.backgroundColor = "#111111");
       nav.forEach(nav => nav.style.backgroundColor = "#111111");
-      toggleButton.textContent = "light_mode"; 
+      toggleButton.textContent = "light_mode";
+      document.hero.classList.add('darkmode')
     }
     isDarkMode = !isDarkMode;
   });
