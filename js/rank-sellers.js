@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#loader').style.display = 'none';
+});
+
 let darkmode = localStorage.getItem ('darkmode' )
 const themeSwitch = document.getElementById( 'theme-switch')
 const enableDarkmode = () => {
