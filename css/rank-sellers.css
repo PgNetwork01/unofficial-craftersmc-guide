@@ -315,7 +315,7 @@ footer {
   align-items: center;
   position: fixed;
   top: 20px; 
-  right: 20px;|
+  right: 20px;
 }
 
 @media (max-width: 1200px) and (min-width: 600px) {
