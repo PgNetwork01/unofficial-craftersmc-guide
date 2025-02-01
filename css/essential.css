@@ -92,7 +92,12 @@ span.no_selection {
     cursor: pointer;
 }
 
-
+.navbar a img {
+    /* height: 67px; */
+    margin-left: 25px;
+    max-width: calc(100% - 16px);
+    object-fit: contain;
+}
 
 .sidebar {
     position: fixed;
