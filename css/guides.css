@@ -67,9 +67,12 @@ button.nav-btn.dark-mode {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  width: -webkit-fill-available;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 15px;
+  padding: 0 10px;
 }
 
 button.nav-btn:disabled {
