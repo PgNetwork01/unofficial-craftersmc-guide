@@ -87,18 +87,12 @@ span.no_selection {
 
 .menu-icon,
 .material-icons {
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 5px;
     cursor: pointer;
 }
 
-.navbar a img {
-    height: 50px;
-    width: auto;
-    margin-right: 10px;
-    max-width: calc(100% - 20px);
-    object-fit: contain;
-}
+
 
 .sidebar {
     position: fixed;
