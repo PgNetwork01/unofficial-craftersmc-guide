@@ -134,6 +134,29 @@
     }
   }
 */
+.darkmode{
+  --background-color: #222222;
+  --text-color: #222;
+  --title-color: #ffffff;
+  --text-shadow-color: #000000;
+  --credits-footer-color: #6c757d;
+  --seller-list-background: #111111;
+  --seller-card-background: #333333;
+  --box-shadow-color: rgba(1, 1, 1, 0.1);
+  --box-shadow-hover-color: rgba(0, 0, 0, 0.3);
+  --box-shadow-seller-card: rgba(200, 200, 200, 0.2);
+  --status-selling-color: green;
+  --status-paused-color: chocolate;
+  --status-inactive-color: red;
+  --status-unknown-color: #6c757d;
+  --button-background-color: #444444;
+  --button-text-color: #fff;
+  --button-hover-background-color: #222222;
+  --warning-color: red;
+  --warning-text-shadow-color: #000000;
+  --background-tint: rgba(0,0,0,0.5);
+}
+
 :root {
   --background-color: #f9f9f9;
   --text-color: #222;
@@ -143,7 +166,7 @@
   --seller-list-background: #ffffff;
   --seller-card-background: #f1f1f1;
   --box-shadow-color: rgba(0, 0, 0, 0.1);
-  --box-shadow-hover-color: rgba(0, 0, 0, 0.3);
+  --box-shadow-hover-color: rgba(255, 255, 255, 0.3);
   --box-shadow-seller-card: rgba(0, 0, 0, 0.2);
   --status-selling-color: green;
   --status-paused-color: chocolate;
@@ -154,16 +177,18 @@
   --button-hover-background-color: #0056b3;
   --warning-color: #DD2222;
   --warning-text-shadow-color: #000000;
+  --background-tint: rgba(0,0,0,0);
 }
 
 body.image {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
+  background-color: linear-gradient(var(--background-tint), var(--background-tint) ),
+  url('../Backgrounds/1000005399-modified~2.png');
+  
   color: var(--text-color);
   text-align: left;
-  background: url("../Backgrounds/1000005399-modified~2.png");
   background-size: cover;
   background-position-x: center;
 }
