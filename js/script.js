@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       close.forEach(button => button.style.color = "black");
       bottomNavItem.forEach(nav => nav.style.color = "#333333");
       bottomNavIcon.forEach(nav => nav.style.color = "#333333");
+      toggleButton.textContent = "dark_mode"; 
     } else {
       // Dark Mode
       document.body.style.backgroundColor = "#333333";
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       close.forEach(button => button.style.color = "white");
       bottomNavItem.forEach(nav => nav.style.color = "white");
       bottomNavIcon.forEach(nav => nav.style.color = "white");
+      toggleButton.textContent = "light_mode"; 
     }
     isDarkMode = !isDarkMode;
   });
