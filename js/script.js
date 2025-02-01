@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bottomNav = document.querySelectorAll(".bottom-nav");
   const bottomNavItem = document.querySelectorAll(".nav-item");
   const bottomNavIcon = document.querySelectorAll(".botton-nav-icon");
+  const ctaBtn = document.querySelectorAll(".cta-btn");
+  const nav = document.querySelectorAll(".navbar");
   const toggleButton = document.getElementById("darkModeToggle");
   let isDarkMode = false;
 
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       close.forEach(button => button.style.color = "black");
       bottomNavItem.forEach(nav => nav.style.color = "#333333");
       bottomNavIcon.forEach(nav => nav.style.color = "#333333");
+      ctaBtn.forEach(nav => nav.style.backgroundColor = "#007bff");
+      nav.forEach(nav => nav.style.backgroundColor = "#007bff");
       toggleButton.textContent = "dark_mode"; 
     } else {
       // Dark Mode
@@ -43,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
       close.forEach(button => button.style.color = "white");
       bottomNavItem.forEach(nav => nav.style.color = "white");
       bottomNavIcon.forEach(nav => nav.style.color = "white");
+      ctaBtn.forEach(nav => nav.style.backgroundColor = "#111111");
+      nav.forEach(nav => nav.style.backgroundColor = "#111111");
       toggleButton.textContent = "light_mode"; 
     }
     isDarkMode = !isDarkMode;
