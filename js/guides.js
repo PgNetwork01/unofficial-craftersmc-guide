@@ -1,8 +1,7 @@
 document.getElementById('dark-mode-toggle').addEventListener('click', (event) => {
   const button = event.target;
   const isDarkMode = document.body.classList.toggle('dark-mode');
-
-  button.textContent = isDarkMode ? '<span class="menu-icon material-icons" id="darkModeToggle">dark_mode</span>' : '☀️';
+  
   button.classList.toggle('dark-mode', isDarkMode);
   button.classList.toggle('light-mode', !isDarkMode);
 

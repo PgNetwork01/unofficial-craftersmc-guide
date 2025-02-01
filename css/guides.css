@@ -44,6 +44,18 @@ button.toggle-button {
   transition: background-color 0.3s;
 }
 
+button.toggle-button:last-child {
+  display: none;
+}
+
+button.toggle-button.dark-mode:first-child {
+  display: none;
+}
+
+button.toggle-button.dark-mode:last-child {
+  display: block;
+}
+
 button.toggle-button.dark-mode {
   background-color: var(--primary-color-dark);
   color: white;
