@@ -318,6 +318,22 @@ footer {
   right: 20px;
 }
 
+#theme-switch svg{
+  fill: white;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
 @media (max-width: 1200px) and (min-width: 600px) {
   .seller-list {
       grid-template-columns: repeat(2, 1fr);
