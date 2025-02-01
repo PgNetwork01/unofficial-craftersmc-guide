@@ -94,6 +94,7 @@ span.no_selection {
 
 .navbar a img {
     height: 50px;
+    width: auto;
     margin-right: 10px;
     max-width: calc(100% - 20px);
     object-fit: contain;
