@@ -305,6 +305,20 @@ footer {
   text-align: center;
 }
 
+#theme-switch {
+  height: 50px; 
+  width: 50px; 
+  padding: 0; 
+  border-radius: 50%;
+  background-color: var(--button-background-color) ;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: fixed;
+  top: 20px; 
+  right: 20px;|
+}
+
 @media (max-width: 1200px) and (min-width: 600px) {
   .seller-list {
       grid-template-columns: repeat(2, 1fr);
