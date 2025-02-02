@@ -153,3 +153,7 @@ span.no_selection {
     right: 15px;
     cursor: pointer;
 }
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
