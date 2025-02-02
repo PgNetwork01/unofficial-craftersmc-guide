@@ -336,8 +336,9 @@ footer {
   justify-content: center; 
   align-items: center;
   position: fixed;
-  top: 70px;
+  top: 700px;
   right: 20px;
+  z-index: 200;
 }
 
 #theme-switch svg{
