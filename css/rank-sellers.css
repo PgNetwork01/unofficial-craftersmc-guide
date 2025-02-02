@@ -34,6 +34,7 @@
   --box-shadow-color: rgba(1, 1, 1, 0.1);
   --box-shadow-hover-color: rgba(0, 0, 0, 0.3);
   --box-shadow-seller-card: rgba(200, 200, 200, 0.2);
+  --box-shadow-seller-card-hover: rgba(255, 255, 255, 0.6);
   --status-selling-color: green;
   --status-paused-color: chocolate;
   --status-inactive-color: red;
@@ -261,6 +262,7 @@ footer {
 .seller-card-inactive:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 10px var(--box-shadow-hover-color);
+  
 }
 
 .seller-card img {
