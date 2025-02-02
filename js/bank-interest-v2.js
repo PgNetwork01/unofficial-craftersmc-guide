@@ -16,6 +16,11 @@ function updateInterestTimes() {
     document.getElementById("nextInterestTime").textContent = nextInterestLocal;
 }
 
+function toggleInterestContainer() {
+    let content = document.querySelector('.interest-container .content');
+    content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+}
+
 function updateCountdown() {
     let now = new Date();
     let timeLeft = nextInterestUTC - now;
