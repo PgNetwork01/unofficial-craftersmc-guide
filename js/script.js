@@ -11,6 +11,7 @@ function toggleSidebar() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
+  const loader = document.getElementById("loader");
   const sidebarLink = document.querySelectorAll(".sidebar-link");
   const close = document.querySelectorAll(".sidebar-close");
   const bottomNav = document.querySelectorAll(".bottom-nav");
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.backgroundColor = "#333333";
       document.body.style.color = "white";
       sidebar.style.backgroundColor = "#111111";
+      loader.style.backgroundColor = "#333333";
       sidebar.style.color = "white";
       bottomNav.forEach(nav => nav.style.backgroundColor = "#111111");
       list.forEach(nav => nav.style.backgroundColor = "#111111");
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       sidebar.style.backgroundColor = "white";
+      loader.style.backgroundColor = "white";
       sidebar.style.color = "black";
       bottomNav.forEach(nav => nav.style.backgroundColor = "white");
       list.forEach(nav => nav.style.backgroundColor = "white");
