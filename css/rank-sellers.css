@@ -1,4 +1,4 @@
-/* 
+
 
 :root {
   --background-color: #f9f9f9;
@@ -370,8 +370,7 @@ footer {
       grid-template-columns: 1fr;
   }
 }
- */
-
+/*
 body.image {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -515,3 +514,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+*/
