@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Leaderboard</title>
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             background-color: white;
@@ -14,6 +13,16 @@
             margin: 0;
             padding: 0;
         }
+    
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+     
+        h1 {
+            margin-top: 5px;
+            font-size: 50px;
+            font-weight: bold;
+        }
 
         .container {
             max-width: 900px;
@@ -21,7 +30,6 @@
             padding: 20px;
         }
 
-        /* Tabs for Categories */
         .tabs {
             display: flex;
             justify-content: center;
@@ -44,7 +52,6 @@
             background: #0056b3;
         }
 
-        /* Collection Selection Grid */
         .collections {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -75,10 +82,8 @@
             border-color: #007bff;
         }
 
-        /* Leaderboard Table */
         .leaderboard {
             margin-top: 20px;
-            display: none;
         }
 
         table {
@@ -105,7 +110,6 @@
             background: #f1f1f1;
         }
 
-        /* Responsive Design */
         @media (max-width: 600px) {
             .collections {
                 grid-template-columns: repeat(3, 1fr);
@@ -131,9 +135,8 @@
 
     <div class="container">
         <h1>CraftersMC Collection Leaderboard</h1>
-        <p>Select a category and collection to view the top 10 players.</p>
+        <p>Select a category and collection to view the top 5 players.</p>
 
-        <!-- Tabs for Categories -->
         <div class="tabs">
             <button class="tab active" onclick="switchCategory('Mining')">Mining</button>
             <button class="tab" onclick="switchCategory('Farming')">Farming</button>
@@ -141,74 +144,73 @@
             <button class="tab" onclick="switchCategory('Foraging')">Foraging</button>
         </div>
 
-        <!-- Collection Selection Grid -->
-        <div class="collections" id="collectionGrid">
-            <!-- Collections will be loaded dynamically -->
-        </div>
+        <div class="collections" id="collectionGrid"></div>
 
-        <!-- Leaderboard Table -->
-        <div class="leaderboard" id="leaderboard">
-            <h2 id="collectionTitle"></h2>
+        <div class="leaderboard">
+            <h2 id="collectionTitle">Select a Collection</h2>
             <table>
                 <thead>
                     <tr><th>Rank</th><th>Player</th><th>Collection</th></tr>
                 </thead>
                 <tbody id="leaderboardData">
-                    <!-- Leaderboard data will be injected here -->
+                    <tr><td>1</td><td>???</td><td>???</td></tr>
+                    <tr><td>2</td><td>???</td><td>???</td></tr>
+                    <tr><td>3</td><td>???</td><td>???</td></tr>
+                    <tr><td>4</td><td>???</td><td>???</td></tr>
+                    <tr><td>5</td><td>???</td><td>???</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 
     <script>
-        // Sample Data for Collections & Players
         const collectionsData = {
             Mining: [
-                { name: "Cobblestone", image: "assets/Cobblestone_JE5_BE3.png", players: generatePlayers() },
-                { name: "Iron", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Gold", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Diamond", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Emerald", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Redstone", image: "https://via.placeholder.com/80", players: generatePlayers() }
+                { name: "Cobblestone", image: "assets/Cobblestone_JE5_BE3.png", players: [
+                    { rank: 1, name: "Steve", score: 5000 },
+                    { rank: 2, name: "Alex", score: 4500 },
+                    { rank: 3, name: "Notch", score: 4000 },
+                    { rank: 4, name: "Herobrine", score: 3500 },
+                    { rank: 5, name: "Bob", score: 3000 }
+                ] },
+                { name: "Iron", image: "https://via.placeholder.com/80", players: [] },
+                { name: "Gold", image: "https://via.placeholder.com/80", players: [] },
+                { name: "Diamond", image: "https://via.placeholder.com/80", players: [] },
+                { name: "Emerald", image: "https://via.placeholder.com/80", players: [] },
+                { name: "Redstone", image: "https://via.placeholder.com/80", players: [] }
             ],
             Farming: [
-                { name: "Wheat", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Carrot", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Potato", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Pumpkin", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Melon", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Sugar Cane", image: "https://via.placeholder.com/80", players: generatePlayers() }
+                { name: "Wheat", image: "https://via.placeholder.com/80", players: [
+                    { rank: 1, name: "FarmerJoe", score: 5500 },
+                    { rank: 2, name: "GreenThumb", score: 5000 },
+                    { rank: 3, name: "Harvester", score: 4700 },
+                    { rank: 4, name: "Planter", score: 4200 },
+                    { rank: 5, name: "Grower", score: 3900 }
+                ] }
             ],
             Combat: [
-                { name: "Skeleton", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Zombie", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Enderman", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Blaze", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Spider", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Creeper", image: "https://via.placeholder.com/80", players: generatePlayers() }
+                { name: "Zombie", image: "https://via.placeholder.com/80", players: [
+                    { rank: 1, name: "Slayer", score: 6000 },
+                    { rank: 2, name: "Warrior", score: 5500 },
+                    { rank: 3, name: "Hunter", score: 5200 },
+                    { rank: 4, name: "Unknown", score: 4800 },
+                    { rank: 5, name: "Unknown", score: 4500 }
+                ] }
             ],
             Foraging: [
-                { name: "Oak", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Birch", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Spruce", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Jungle", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Acacia", image: "https://via.placeholder.com/80", players: generatePlayers() },
-                { name: "Dark Oak", image: "https://via.placeholder.com/80", players: generatePlayers() }
+                { name: "Oak", image: "https://via.placeholder.com/80", players: [
+                    { rank: 1, name: "Lumberjack", score: 5300 },
+                    { rank: 2, name: "Woodcutter", score: 4900 },
+                    { rank: 3, name: "Forester", score: 4700 },
+                    { rank: 4, name: "Axeman", score: 4300 },
+                    { rank: 5, name: "TreeFeller", score: 4000 }
+                ] }
             ]
         };
-
-        function generatePlayers() {
-            let players = [];
-            for (let i = 1; i <= 10; i++) {
-                players.push({ rank: i, name: `Player${i}`, score: Math.floor(Math.random() * 1000) });
-            }
-            return players;
-        }
 
         function switchCategory(category) {
             document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
             document.querySelector(`.tab:nth-child(${Object.keys(collectionsData).indexOf(category) + 1})`).classList.add("active");
-
             loadCollections(category);
         }
 
@@ -230,14 +232,13 @@
             document.getElementById("collectionTitle").innerText = `${collection.name} Leaderboard`;
 
             const leaderboardData = document.getElementById("leaderboardData");
-            leaderboardData.innerHTML = collection.players.map(player => `<tr><td>${player.rank}</td><td>${player.name}</td><td>${player.score}</td></tr>`).join("");
-
-            document.getElementById("leaderboard").style.display = "block";
+            leaderboardData.innerHTML = collection.players.length
+                ? collection.players.map(player => `<tr><td>${player.rank}</td><td>${player.name}</td><td>${player.score}</td></tr>`).join("")
+                : "<tr><td>1</td><td>???</td><td>???</td></tr>".repeat(5);
         }
 
         loadCollections("Mining");
     </script>
-
     <footer style="background: #666; color: #999; text-align: center; padding: 10px; margin-top: 20px;">
         &copy; 2025 David_R06, NumberOne230564, TGJASSIYT, TechonTheDev. All rights reserved.
     </footer>
