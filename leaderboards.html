@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Leaderboard</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Tabs for Categories */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tab {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .tab.active {
+            background: #0056b3;
+        }
+
+        /* Collection Selection Grid */
+        .collections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            justify-items: center;
+        }
+
+        .collection-item {
+            width: 110px;
+            height: 110px;
+            background: #f1f1f1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .collection-item img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .collection-item:hover,
+        .collection-item.active {
+            border-color: #007bff;
+        }
+
+        /* Leaderboard Table */
+        .leaderboard {
+            margin-top: 20px;
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        tbody tr:hover {
+            background: #f1f1f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .collections {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collection-item {
+                width: 100px;
+                height: 100px;
+            }
+
+            .collection-item img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .tab {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Collection Leaderboard</h1>
+        <p>Select a category and collection to view the top 10 players.</p>
+
+        <!-- Tabs for Categories -->
+        <div class="tabs">
+            <button class="tab active" onclick="switchCategory('Mining')">Mining</button>
+            <button class="tab" onclick="switchCategory('Farming')">Farming</button>
+            <button class="tab" onclick="switchCategory('Combat')">Combat</button>
+            <button class="tab" onclick="switchCategory('Foraging')">Foraging</button>
+        </div>
+
+        <!-- Collection Selection Grid -->
+        <div class="collections" id="collectionGrid">
+            <!-- Collections will be loaded dynamically -->
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="leaderboard" id="leaderboard">
+            <h2 id="collectionTitle"></h2>
+            <table>
+                <thead>
+                    <tr><th>Rank</th><th>Player</th><th>Score</th></tr>
+                </thead>
+                <tbody id="leaderboardData">
+                    <!-- Leaderboard data will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample Data for Collections & Players
+        const collectionsData = {
+            Mining: [
+                { name: "Cobblestone", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Iron", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Gold", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Diamond", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Emerald", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Redstone", image: "https://via.placeholder.com/80", players: generatePlayers() }
+            ],
+            Farming: [
+                { name: "Wheat", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Carrot", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Potato", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Pumpkin", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Melon", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Sugar Cane", image: "https://via.placeholder.com/80", players: generatePlayers() }
+            ],
+            Combat: [
+                { name: "Skeleton", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Zombie", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Enderman", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Blaze", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Spider", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Creeper", image: "https://via.placeholder.com/80", players: generatePlayers() }
+            ],
+            Foraging: [
+                { name: "Oak", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Birch", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Spruce", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Jungle", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Acacia", image: "https://via.placeholder.com/80", players: generatePlayers() },
+                { name: "Dark Oak", image: "https://via.placeholder.com/80", players: generatePlayers() }
+            ]
+        };
+
+        function generatePlayers() {
+            let players = [];
+            for (let i = 1; i <= 10; i++) {
+                players.push({ rank: i, name: `Player${i}`, score: Math.floor(Math.random() * 1000) });
+            }
+            return players;
+        }
+
+        function switchCategory(category) {
+            document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
+            document.querySelector(`.tab:nth-child(${Object.keys(collectionsData).indexOf(category) + 1})`).classList.add("active");
+
+            loadCollections(category);
+        }
+
+        function loadCollections(category) {
+            const collectionGrid = document.getElementById("collectionGrid");
+            collectionGrid.innerHTML = "";
+
+            collectionsData[category].forEach((collection, index) => {
+                let item = document.createElement("div");
+                item.classList.add("collection-item");
+                item.innerHTML = `<img src="${collection.image}" alt="${collection.name}">`;
+                item.onclick = () => loadLeaderboard(category, index);
+                collectionGrid.appendChild(item);
+            });
+        }
+
+        function loadLeaderboard(category, index) {
+            const collection = collectionsData[category][index];
+            document.getElementById("collectionTitle").innerText = `${collection.name} Leaderboard`;
+
+            const leaderboardData = document.getElementById("leaderboardData");
+            leaderboardData.innerHTML = collection.players.map(player => `<tr><td>${player.rank}</td><td>${player.name}</td><td>${player.score}</td></tr>`).join("");
+
+            document.getElementById("leaderboard").style.display = "block";
+        }
+
+        loadCollections("Mining");
+    </script>
+
+</body>
+</html>
