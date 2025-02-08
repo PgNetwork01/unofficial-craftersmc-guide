@@ -12,7 +12,7 @@
   --box-shadow-hover-color: rgba(255, 255, 255, 0.3);
   --box-shadow-seller-card: rgba(0, 0, 0, 0.2);
   --status-selling-color: green;
-  --status-paused-color: chocolate;
+  --status-paused-color: #da5100;
   --status-inactive-color: red;
   --status-unknown-color: #6c757d;
   --button-background-color: #007bff;
@@ -36,7 +36,7 @@
   --box-shadow-seller-card: rgba(200, 200, 200, 0.2);
   --box-shadow-seller-card-hover: rgba(255, 255, 255, 0.6);
   --status-selling-color: green;
-  --status-paused-color: chocolate;
+  --status-paused-color: #ff6a00;
   --status-inactive-color: red;
   --status-unknown-color: #6c757d;
   --button-background-color: #444444;
