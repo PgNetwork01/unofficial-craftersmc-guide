@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('#loader').style.display = 'none';
+  document.querySelector('#loader').style.display = 'flex';
+  setTimeout(function () {
+    document.querySelector('#loader').style.display = 'none';
+  }, 5000);
 });
 
 function toggleSidebar() {
