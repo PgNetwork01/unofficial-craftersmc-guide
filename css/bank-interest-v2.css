@@ -1,10 +1,10 @@
 body.image {
     font-family: Arial, sans-serif;
-    margin: 20px;
     background: url("../Backgrounds/image8298.png");
     background-size: cover;
     background-position-x: center;
 }
+
 h1 {
     font-size: 2.5em;
     font-weight: bold;

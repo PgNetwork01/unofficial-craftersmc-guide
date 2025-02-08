@@ -83,6 +83,7 @@ span.no_selection {
     z-index: 10;
     box-sizing: border-box;
     height: 60px;
+    flex-wrap: nowrap;
 }
 
 .menu-icon,
