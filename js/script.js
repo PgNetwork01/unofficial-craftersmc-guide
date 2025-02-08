@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.style.backgroundColor = "#111111";
       loader.style.backgroundColor = "#333333";
       sidebar.style.color = "white";
-      card.style.backgroundColor = "#333333";
+      card.forEach(card => card.style.backgroundColor = "#222222");
       bottomNav.forEach(nav => nav.style.backgroundColor = "#111111");
       list.forEach(nav => nav.style.backgroundColor = "#111111");
       sidebarLink.forEach(link => link.style.color = "#fff");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.color = "black";
       sidebar.style.backgroundColor = "white";
       loader.style.backgroundColor = "white";
-      card.style.backgroundColor = "white";
+      card.forEach(card => card.style.backgroundColor = "white");
       sidebar.style.color = "black";
       bottomNav.forEach(nav => nav.style.backgroundColor = "white");
       list.forEach(nav => nav.style.backgroundColor = "white");
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleButton.textContent = "dark_mode";
     }
   };
+  
 
   // Apply the stored theme on page load
   applyTheme();
