@@ -9,7 +9,6 @@ function toggleSidebar() {
 
 // Toggle dark and light mode
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const sidebarLink = document.querySelectorAll(".sidebar-link");
