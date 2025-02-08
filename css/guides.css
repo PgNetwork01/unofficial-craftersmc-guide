@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   flex-direction: column;
+  color: black;
 }
 
 body.dark-mode {
@@ -116,39 +117,17 @@ button.nav-btn.dark-mode {
   box-sizing: border-box;
 }
 
-.card.dark-mode {
-  background-color: var(--card-dark-bg-color);
-}
-
-h2.dark-mode {
-  color: var(--dark-text-color)
-}
-
 h3 {
-  color: var(--text-color);
   margin-top: 0;
-}
-
-h3.dark-mode {
-  color: var(--dark-text-color)
 }
 
 ul {
   list-style-type: disc;
   padding-left: 20px;
-  color: var(--text-color);
-}
-
-ul.dark-mode {
-  color: var(--dark-text-color);
 }
 
 ul ul {
   list-style-type: circle;
-}
-
-ul ul.dark-mode {
-  color: var(--dark-text-color)
 }
 
 a {
@@ -156,36 +135,15 @@ a {
   text-decoration: none;
 }
 
-
-
 a:hover {
   text-decoration: underline;
 }
 
 strong {
-  color: var(--text-color);
   font-weight: bold;
-}
-
-strong.dark-mode {
-  color: var(--dark-text-color)
-}
-
-p {
-  color: var(--text-color);
-}
-
-p.dark-mode {
-  color: var(--dark-text-color);
 }
 
 ::selection {
   background: var(--selection-bg-color);
   color: var(--selection-text-color);
 }
-
-::selection.dark-mode {
-  background: var(--dark-selection-bg-color);
-  color: var(--dark-selection-text-color);
-}
-

@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   const sidebarLink = document.querySelectorAll(".sidebar-link");
   const close = document.querySelectorAll(".sidebar-close");
+  const card = document.querySelectorAll(".card");
   const bottomNav = document.querySelectorAll(".bottom-nav");
   const bottomNavItem = document.querySelectorAll(".nav-item");
   const bottomNavIcon = document.querySelectorAll(".botton-nav-icon");
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listCard = document.querySelectorAll(".seller-card");
   const listCardInactive = document.querySelectorAll(".seller-card-inactive");
   const toggleButton = document.getElementById("darkModeToggle");
-  
+
   // Check if the theme is stored in localStorage
   let isDarkMode = localStorage.getItem("darkMode") === "true";
 
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.style.backgroundColor = "#111111";
       loader.style.backgroundColor = "#333333";
       sidebar.style.color = "white";
+      card.style.backgroundColor = "#333333";
       bottomNav.forEach(nav => nav.style.backgroundColor = "#111111");
       list.forEach(nav => nav.style.backgroundColor = "#111111");
       sidebarLink.forEach(link => link.style.color = "#fff");
@@ -59,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.color = "black";
       sidebar.style.backgroundColor = "white";
       loader.style.backgroundColor = "white";
+      card.style.backgroundColor = "white";
       sidebar.style.color = "black";
       bottomNav.forEach(nav => nav.style.backgroundColor = "white");
       list.forEach(nav => nav.style.backgroundColor = "white");
