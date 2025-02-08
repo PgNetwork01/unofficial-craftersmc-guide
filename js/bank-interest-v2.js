@@ -1,5 +1,5 @@
 const interestInterval = 31 * 60 * 60 * 1000;
-const nextInterestUTC = new Date(Date.UTC(2025, 1, 2, 20, 0, 0));
+let nextInterestUTC = new Date(Date.UTC(2025, 1, 2, 20, 0, 0));
 
 function formatDate(date) {
     let options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
@@ -24,16 +24,20 @@ function toggleInterestContainer() {
 function updateCountdown() {
     let now = new Date();
     let timeLeft = nextInterestUTC - now;
+
     if (timeLeft <= 0) {
         nextInterestUTC.setTime(nextInterestUTC.getTime() + interestInterval);
         updateInterestTimes();
+        generateNextInterests();  // Ensure the next 10 interests update when countdown resets
         timeLeft = interestInterval;
     }
+
     let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
     let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
     document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
     let elapsed = interestInterval - timeLeft;
     let progress = (elapsed / interestInterval) * 100;
     document.getElementById("progressBar").style.width = `${progress}%`;
@@ -44,6 +48,7 @@ function generateNextInterests() {
     interestContainer.innerHTML = "";
     let userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     let nextTime = new Date(nextInterestUTC);
+
     for (let i = 0; i < 10; i++) {
         let interestTime = new Date(nextTime.getTime() + i * interestInterval);
         let interestElement = document.createElement("p");
