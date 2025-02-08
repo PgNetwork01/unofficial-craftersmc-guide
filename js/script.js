@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarLink = document.querySelectorAll(".sidebar-link");
   const close = document.querySelectorAll(".sidebar-close");
   const card = document.querySelectorAll(".card");
+  const content = document.querySelectorAll(".content");
   const bottomNav = document.querySelectorAll(".bottom-nav");
   const bottomNavItem = document.querySelectorAll(".nav-item");
   const bottomNavIcon = document.querySelectorAll(".botton-nav-icon");
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.style.backgroundColor = "#333333";
       sidebar.style.color = "white";
       card.forEach(card => card.style.backgroundColor = "#222222");
+      content.forEach(content => content.style.backgroundColor = "#222222");
       bottomNav.forEach(nav => nav.style.backgroundColor = "#111111");
       list.forEach(nav => nav.style.backgroundColor = "#111111");
       sidebarLink.forEach(link => link.style.color = "#fff");
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.style.backgroundColor = "white";
       loader.style.backgroundColor = "white";
       card.forEach(card => card.style.backgroundColor = "white");
+      content.forEach(content => content.style.backgroundColor = "#f9f9f9");
       sidebar.style.color = "black";
       bottomNav.forEach(nav => nav.style.backgroundColor = "white");
       list.forEach(nav => nav.style.backgroundColor = "white");
