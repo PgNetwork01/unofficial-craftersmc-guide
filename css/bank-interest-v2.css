@@ -1,19 +1,19 @@
 body.image {
     font-family: Arial, sans-serif;
+    margin: 20px;
     background: url("../Backgrounds/image8298.png");
     background-size: cover;
     background-position-x: center;
 }
-
 h1 {
     font-size: 2.5em;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 80px;
     color: #007bff;
 }
 .container {
     max-width: 600px;
-    margin: 80px auto;
+    margin: 0 auto;
     text-align: center;
     background-color: white;
     padding: 30px;
@@ -95,5 +95,6 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
+    background-color: #f9f9f9;
     margin-top: 10px;
 }
