@@ -7,12 +7,17 @@
   --text-color: black;
   --selection-bg-color: black;
   --selection-text-color: white;
-  --dark-bg-color: #222222;
-  --dark-text-color: white;
-  --card-dark-bg-color: #2f2f2f;
-  --primary-color-dark: #444444;
-  --dark-selection-text-color: black;
-  --dark-selection-bg-color: white;
+}
+
+.darkmode {
+  --main-bg-color: #222222;
+  --card-bg-color: #2f2f2f;
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #444444;
+  --disabled-bg-color: #2f2f2f;
+  --text-color: #ffffff;
+  --selection-bg-color: #000000;
+  --selection-text-color: #ffffff;
 }
 
 body {
@@ -27,11 +32,6 @@ body {
   box-sizing: border-box;
   flex-direction: column;
   color: black;
-}
-
-body.dark-mode {
-  background-color: var(--dark-bg-color);
-  color: var(--dark-text-color);
 }
 
 button.toggle-button {
@@ -72,10 +72,6 @@ button.nav-btn {
   border-radius: 5px;
 }
 
-button.nav-btn.dark-mode {
-  background-color: var(--primary-color-dark);
-}
-
 .btn-nav {
   display: flex;
   flex-direction: row;
@@ -102,9 +98,7 @@ button.nav-btn {
   cursor: pointer;
 }
 
-button.nav-btn.dark-mode {
-  background-color: var(--primary-color-dark);
-}
+
 
 .card {
   background-color: var(--card-bg-color);
@@ -148,4 +142,35 @@ strong {
 ::selection {
   background: var(--selection-bg-color);
   color: var(--selection-text-color);
+}
+
+#theme-switch {
+  height: 50px; 
+  width: 50px; 
+  padding: 0; 
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 200;
+}
+
+#theme-switch svg{
+  fill: white;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
