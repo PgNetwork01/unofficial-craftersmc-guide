@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('#loader').style.display = 'flex';
   setTimeout(function () {
     document.querySelector('#loader').style.display = 'none';
-  }, 5000);
+  }, 1000);
 });
 
 function toggleSidebar() {
