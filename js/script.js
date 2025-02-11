@@ -11,16 +11,23 @@ const checkAllImagesLoaded = () => {
   }
 };
 
-// Handle case where no images are present
+// Check each image's loading state
 if (images.length === 0) {
-  loader.classList.add('hidden');
+  loader.classList.add('hidden'); // No images to load
   console.log('No images to load!');
 } else {
   images.forEach((img) => {
-    img.addEventListener('load', checkAllImagesLoaded);
-    img.addEventListener('error', checkAllImagesLoaded);
+    if (img.complete) {
+      // If image is already loaded (cached), increment the count
+      checkAllImagesLoaded();
+    } else {
+      // Attach event listeners for load and error events
+      img.addEventListener('load', checkAllImagesLoaded);
+      img.addEventListener('error', checkAllImagesLoaded);
+    }
   });
 }
+
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
