@@ -1,32 +1,6 @@
-const loader = document.getElementById('loader');
-const images = document.querySelectorAll('img');
-
-let loadedImagesCount = 0;
-
-const checkAllImagesLoaded = () => {
-  loadedImagesCount++;
-  if (loadedImagesCount === images.length) {
-    loader.classList.add('hidden');
-    console.log('All images have been loaded!');
-  }
-};
-
-// Check each image's loading state
-if (images.length === 0) {
-  loader.classList.add('hidden'); // No images to load
-  console.log('No images to load!');
-} else {
-  images.forEach((img) => {
-    if (img.complete) {
-      // If image is already loaded (cached), increment the count
-      checkAllImagesLoaded();
-    } else {
-      // Attach event listeners for load and error events
-      img.addEventListener('load', checkAllImagesLoaded);
-      img.addEventListener('error', checkAllImagesLoaded);
-    }
-  });
-}
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('#loader').style.display = 'none';
+});
 
 
 function toggleSidebar() {
