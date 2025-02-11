@@ -1,12 +1,21 @@
 const loader = document.getElementById('loader');
-    const img = document.img
-    img.addEventListener('load', () => {
-      console.log('Image has been loaded!');
-      loader.classList.add('hidden');
-    });
-    img.addEventListener('error', () => {
-      console.log('Failed to load the image.');
-      loader.textContent = 'Failed to load content.';
+const images = document.querySelectorAll('img');
+
+let loadedImagesCount = 0;
+
+const checkAllImagesLoaded = () => {
+  loadedImagesCount++;
+  if (loadedImagesCount === images.length) {
+    loader.classList.add('hidden');
+    console.log('All images have been loaded!');
+  }
+};
+
+images.forEach((img) => {
+  img.addEventListener('load', checkAllImagesLoaded);
+  img.addEventListener('error', checkAllImagesLoaded);
+});
+
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
