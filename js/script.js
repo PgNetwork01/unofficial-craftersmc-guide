@@ -1,9 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector('#loader').style.display = 'flex';
-  setTimeout(function () {
-    document.querySelector('#loader').style.display = 'none';
-  }, 1000);
-});
+const loader = document.getElementById('loader');
+    const img = document.img
+    img.addEventListener('load', () => {
+      console.log('Image has been loaded!');
+      loader.classList.add('hidden');
+    });
+    img.addEventListener('error', () => {
+      console.log('Failed to load the image.');
+      loader.textContent = 'Failed to load content.';
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
