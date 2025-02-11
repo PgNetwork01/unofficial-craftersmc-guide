@@ -16,14 +16,12 @@ images.forEach((img) => {
   img.addEventListener('error', checkAllImagesLoaded);
 });
 
-
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle("open");
 }
 
 // Toggle dark and light mode
-
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const loader = document.getElementById("loader");
@@ -93,16 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleButton.textContent = "dark_mode";
     }
   };
-  
 
   // Apply the stored theme on page load
   applyTheme();
 
-  toggleButton.addEventListener("click", () => {
-    // Toggle the mode and apply the theme
-    isDarkMode = !isDarkMode;
-    applyTheme();
-    // Store the preference in localStorage
-    localStorage.setItem("darkMode", isDarkMode);
-  });
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      // Toggle the mode and apply the theme
+      isDarkMode = !isDarkMode;
+      applyTheme();
+      // Store the preference in localStorage
+      localStorage.setItem("darkMode", isDarkMode);
+    });
+  }
 });
