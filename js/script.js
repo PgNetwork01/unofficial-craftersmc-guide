@@ -11,10 +11,16 @@ const checkAllImagesLoaded = () => {
   }
 };
 
-images.forEach((img) => {
-  img.addEventListener('load', checkAllImagesLoaded);
-  img.addEventListener('error', checkAllImagesLoaded);
-});
+// Handle case where no images are present
+if (images.length === 0) {
+  loader.classList.add('hidden');
+  console.log('No images to load!');
+} else {
+  images.forEach((img) => {
+    img.addEventListener('load', checkAllImagesLoaded);
+    img.addEventListener('error', checkAllImagesLoaded);
+  });
+}
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
