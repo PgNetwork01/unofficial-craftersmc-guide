@@ -1,5 +1,14 @@
 const interestInterval = 31 * 60 * 60 * 1000;
-let nextInterestUTC = new Date(Date.UTC(2025, 1, 2, 20, 0, 0));
+
+function calculateBaseTime() {
+    const now = new Date();
+    const currentTime = now.getTime();
+    const baseTime = new Date(Date.UTC(2025, 1, 2, 20, 0, 0)).getTime();
+    const periods = Math.floor((currentTime - baseTime) / interestInterval);
+    return new Date(baseTime + (periods * interestInterval));
+}
+
+let nextInterestUTC = calculateBaseTime();
 
 function formatDate(date) {
     let options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
