@@ -49,72 +49,18 @@
     </div>
 
     <script>
-        let collectionsData = {};
-        let darkmode = localStorage.getItem('darkmode');
-        const themeSwitch = document.getElementById('theme-switch');
-        
-        const enableDarkmode = () => {
-            document.body.classList.add('darkmode');
-            localStorage.setItem('darkmode', 'active');
-        };
-        
-        const disableDarkmode = () => {
-            document.body.classList.remove('darkmode');
-            localStorage.setItem('darkmode', null);
-        };
-        
-        if (darkmode === "active") enableDarkmode();
-        
-        themeSwitch.addEventListener("click", () => {
-            darkmode = localStorage.getItem('darkmode');
-            darkmode !== "active" ? enableDarkmode() : disableDarkmode();
-        });
-
-        fetch('data/leaderboards.json')
-            .then(response => response.json())
-            .then(data => {
-                collectionsData = data;
-                loadCollections("Mining");
-            })
-            .catch(error => console.error('Error loading leaderboard data:', error));
-                    function switchCategory(category) {
-            document.querySelectorAll(".tab").forEach(tab => {
-                if (tab.textContent === category) {
-                    tab.classList.add("active");
-                } else {
-                    tab.classList.remove("active");
-                }
-            });
-            loadCollections(category);
-        }
-
-        function loadCollections(category) {
-            const collectionGrid = document.getElementById("collectionGrid");
-            collectionGrid.innerHTML = "";
-            
-            if (collectionsData[category]) {
-                collectionsData[category].forEach((collection, index) => {
-                    let item = document.createElement("div");
-                    item.classList.add("collection-item");
-                    item.innerHTML = `<img src="${collection.image}" alt="${collection.name}">`;
-                    item.onclick = () => loadLeaderboard(category, index);
-                    collectionGrid.appendChild(item);
-                });
-            }
-        }
-
-        function loadLeaderboard(category, index) {
-            const collection = collectionsData[category][index];
-            document.getElementById("collectionTitle").innerText = `${collection.name} Leaderboard`;
-            
-            const leaderboardData = document.getElementById("leaderboardData");
-            leaderboardData.innerHTML = collection.players
-                .map(player => `<tr><td>${player.rank}</td><td>${player.name}</td><td>${player.score}</td></tr>`)
-                .join("");
-        }
+        const collectionsData = {
+            Mining: [
+                { name: "Cobblestone", image: "assets/mining/Cobblestone_JE5_BE3.png", players: [
+                    { rank: 1, name: "Unknown", score: "N/A" },
+                    { rank: 2, name: "Blue_cat1745", score: "125M+" },
+                    { rank: 3, name: "Unknown", score: "122M+" },
+                    { rank: 4, name: "UbeRNooB8834", score: "115M+" },
+                    { rank: 5, name: "SphinxWraith", score: "107M+" }
+                ] },
                 { name: "Iron Ingot", image: "assets/mining/Iron_Ingot_JE3_BE2.png", players: [
                     { rank: 1, name: "Unknown", score: "N/A" },
-                    { rank: 2, name: "Unknown", score: "N/A },
+                    { rank: 2, name: "Unknown", score: "N/A" },
                     { rank: 3, name: "ZepthyrX", score: "17.8M+" },
                     { rank: 4, name: "Emircanyilmaz", score: "16.9M+" },
                     { rank: 5, name: "Exnned", score: "16.8M+" }
