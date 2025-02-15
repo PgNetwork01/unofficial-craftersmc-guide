@@ -49,18 +49,23 @@
     </div>
 
     <script>
-        const collectionsData = {
-            Mining: [
-                { name: "Cobblestone", image: "assets/mining/Cobblestone_JE5_BE3.png", players: [
-                    { rank: 1, name: "Unknown", score: "N/A" },
-                    { rank: 2, name: "Blue_cat1745", score: "125M+" },
-                    { rank: 3, name: "Unknown", score: "122M+" },
+        let collectionsData = {};
+        
+        fetch('data/leaderboards.json')
+            .then(response => response.json())
+            .then(data => {
+                collectionsData = data;
+                loadCollections("Mining");
+            })
+            .catch(error => console.error('Error loading leaderboard data:', error));
+
+        // Original collectionsData moved to leaderboards.json
                     { rank: 4, name: "UbeRNooB8834", score: "115M+" },
                     { rank: 5, name: "SphinxWraith", score: "107M+" }
                 ] },
                 { name: "Iron Ingot", image: "assets/mining/Iron_Ingot_JE3_BE2.png", players: [
                     { rank: 1, name: "Unknown", score: "N/A" },
-                    { rank: 2, name: "Unknown", score: "N/A" },
+                    { rank: 2, name: "Unknown", score: "N/A },
                     { rank: 3, name: "ZepthyrX", score: "17.8M+" },
                     { rank: 4, name: "Emircanyilmaz", score: "16.9M+" },
                     { rank: 5, name: "Exnned", score: "16.8M+" }
