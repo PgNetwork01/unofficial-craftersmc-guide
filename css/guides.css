@@ -7,6 +7,7 @@
   --text-color: black;
   --selection-bg-color: black;
   --selection-text-color: white;
+  --table-border: #ccc;
 }
 
 .darkmode {
@@ -18,6 +19,7 @@
   --text-color: #ffffff;
   --selection-bg-color: #000000;
   --selection-text-color: #ffffff;
+  --table-border: #888888;
 }
 
 body {
@@ -173,4 +175,9 @@ strong {
 
 .darkmode #theme-switch svg:last-child {
   display: block;
+}
+
+table {
+  border-radius: 20px;
+  border: 1px solid var(--table-border);
 }
