@@ -26,7 +26,7 @@ if(darkmode === "active") enableDarkmode ()
   darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
 
-
+/*
 // Toggle dark and light mode
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
@@ -110,4 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("darkMode", isDarkMode);
     });
   }
-});
+});*/
