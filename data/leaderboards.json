@@ -11,6 +11,56 @@
         { "rank": 4, "name": "UbeRNooB8834", "score": "115M+" },
         { "rank": 5, "name": "SphinxWraith", "score": "107M+" }
       ]
+    },
+    {
+      "name": "Iron Ingot",
+      "image": "assets/mining/Iron_Ingot_JE3_BE2.png",
+      "players": [
+        { "rank": 1, "name": "Unknown", "score": "N/A" },
+        { "rank": 2, "name": "Unknown", "score": "N/A" },
+        { "rank": 3, "name": "ZepthyrX", "score": "17.8M+" },
+        { "rank": 4, "name": "Emircanyilmaz", "score": "16.9M+" },
+        { "rank": 5, "name": "Exnned", "score": "16.8M+" }
+      ]
+    }
+  ],
+  "Farming": [
+    {
+      "name": "Wheat",
+      "image": "assets/farming/Wheat_JE2_BE2.png",
+      "players": [
+        { "rank": 1, "name": "FarmerJoe", "score": "5500" },
+        { "rank": 2, "name": "GreenThumb", "score": "5000" },
+        { "rank": 3, "name": "Harvester", "score": "4700" },
+        { "rank": 4, "name": "Planter", "score": "4200" },
+        { "rank": 5, "name": "Grower", "score": "3900" }
+      ]
+    }
+  ],
+  "Combat": [
+    {
+      "name": "Rotten Flesh",
+      "image": "assets/combat/Rotten_Flesh_JE3_BE2.png",
+      "players": [
+        { "rank": 1, "name": "Slayer", "score": "6000" },
+        { "rank": 2, "name": "Warrior", "score": "5500" },
+        { "rank": 3, "name": "Hunter", "score": "5200" },
+        { "rank": 4, "name": "Unknown", "score": "4800" },
+        { "rank": 5, "name": "Unknown", "score": "4500" }
+      ]
+    }
+  ],
+  "Foraging": [
+    {
+      "name": "Oak Log",
+      "image": "assets/foraging/Oak_Log_(UD)_JE5_BE3.png",
+      "players": [
+        { "rank": 1, "name": "Lumberjack", "score": "5300" },
+        { "rank": 2, "name": "Woodcutter", "score": "4900" },
+        { "rank": 3, "name": "Forester", "score": "4700" },
+        { "rank": 4, "name": "Axeman", "score": "4300" },
+        { "rank": 5, "name": "TreeFeller", "score": "4000" }
+      ]
     }
   ]
 }
