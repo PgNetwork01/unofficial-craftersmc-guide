@@ -181,3 +181,7 @@ table {
   border-radius: 20px;
   border: 1px solid var(--table-border);
 }
+
+th, td {
+  border: 1px solid var(--table-border);
+}
