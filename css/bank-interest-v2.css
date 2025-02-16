@@ -25,8 +25,8 @@ body.image {
     font-family: Arial, sans-serif;
     margin: 20px;
     background: url("../Backgrounds/image8298.png");
-    background-size: cover;
-    /*background-repeat: no-repeat;*/
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     background-position-x: center;
     color: var(--color-text-dark);
     
