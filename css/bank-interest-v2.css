@@ -26,15 +26,16 @@ body.image {
     margin: 20px;
     background: url("../Backgrounds/image8298.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     background-position-x: center;
     color: var(--color-text-dark);
+    
 }
 h1 {
     font-size: 2.5em;
     font-weight: bold;
     margin-top: 80px;
-    color: var(--color-primary);
+    color: var(--title-primary);
 }
 .container {
     max-width: 600px;
