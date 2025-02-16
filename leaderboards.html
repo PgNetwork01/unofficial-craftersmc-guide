@@ -49,26 +49,9 @@
     </div>
 
     <script>
-        let collectionsData = {};
-        
-        // Fetch data from JSON file
-        fetch('data/leaderboards.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                collectionsData = data;
-                loadCollections("Mining"); // Initialize with Mining category
-            })
-            .catch(error => {
-                console.error('Error loading leaderboard data:', error);
-                // Fallback data in case JSON fails to load
-                collectionsData = {
-                    Mining: [
-                        { name: "Cobblestone", image: "assets/mining/Cobblestone_JE5_BE3.png", players: [
+        const collectionsData = {
+            Mining: [
+                { name: "Cobblestone", image: "assets/mining/Cobblestone_JE5_BE3.png", players: [
                     { rank: 1, name: "Unknown", score: "N/A" },
                     { rank: 2, name: "Blue_cat1745", score: "125M+" },
                     { rank: 3, name: "Unknown", score: "122M+" },
@@ -368,11 +351,8 @@
                     { rank: 4, name: "Axeman", score: 4300 },
                     { rank: 5, name: "TreeFeller", score: 4000 }
                 ] }
-            ] }
-                    ]
-                };
-                loadCollections("Mining");
-            });
+            ]
+        };
 
         function switchCategory(category) {
             document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
