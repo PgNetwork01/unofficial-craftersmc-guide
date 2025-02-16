@@ -1,6 +1,7 @@
 
 :root {
     --color-primary: #007bff;
+    --title-primary: #007bff;
     --color-primary-hover: #0056b3;
     --color-text-dark: #333;
     --color-border: #ddd;
@@ -11,6 +12,7 @@
 
 .darkmode {
     --color-primary: #444444;
+    --title-primary: white;
     --color-primary-hover: #222222;
     --color-text-dark: #eee;
     --color-border: #777;
