@@ -7,7 +7,7 @@ function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle("open");
 }
-
+/*
 //better dark mode
 
 let darkmode = localStorage.getItem ('darkmode' )
@@ -25,8 +25,8 @@ if(darkmode === "active") enableDarkmode ()
   darkmode = localStorage.getItem( 'darkmode')
   darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
+*/
 
-/*
 // Toggle dark and light mode
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const listCardInactive = document.querySelectorAll(".seller-card-inactive");
   const toggleButton = document.getElementById("darkModeToggle");
 
-  // Dark mode is handled by tech-darkmode.js
+  // Check if the theme is stored in localStorage
+  let isDarkMode = localStorage.getItem("darkMode") === "true";
 
   const applyTheme = () => {
     if (isDarkMode) {
@@ -109,4 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("darkMode", isDarkMode);
     });
   }
-});*/
+});

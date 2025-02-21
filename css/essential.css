@@ -6,14 +6,6 @@
     --sidebar-text: #2f2f2f;
 }
 
-.darkmode {
-    --guides-blue: #333333;
-    --white: #ffffff;
-    --guides-blue-hover: #222222;
-    --background: #1f1f1f;
-    --sidebar-text: #f4f4f4;
-}
-
 
 #loader {
     position: fixed;
@@ -117,9 +109,9 @@ span.no_selection {
   display: flex;
   justify-content: center; 
   align-items: center;
-  /*position: fixed;
+  position: fixed;
   top: 70px;
-  right: 20px;*/
+  right: 20px;
   z-index: 200;
 }
 
