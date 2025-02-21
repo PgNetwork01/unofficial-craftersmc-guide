@@ -47,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const listCardInactive = document.querySelectorAll(".seller-card-inactive");
   const toggleButton = document.getElementById("darkModeToggle");
 
-  // Check if the theme is stored in localStorage
-  let isDarkMode = localStorage.getItem("darkMode") === "true";
+  // Dark mode is handled by tech-darkmode.js
 
   const applyTheme = () => {
     if (isDarkMode) {
