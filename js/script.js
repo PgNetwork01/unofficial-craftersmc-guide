@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const applyTheme = () => {
     if (isDarkMode) {
       // Dark Mode
-      document.body.style.backgroundColor = "#333333";
+      document.body.style.backgroundColor = "#1e1e2e";
       document.body.style.color = "white";
       sidebar.style.backgroundColor = "#111111";
       loader.style.backgroundColor = "#333333";
