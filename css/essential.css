@@ -79,7 +79,7 @@ span.no_selection {
     padding: 10px 20px;
     position: fixed;
     top: 0;
-    width: -webkit-fill-available;
+    width: 100%;
     z-index: 10;
     box-sizing: border-box;
     height: 60px;
